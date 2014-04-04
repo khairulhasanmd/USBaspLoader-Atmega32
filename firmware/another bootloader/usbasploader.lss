@@ -1,0 +1,1855 @@
+
+usbasploader.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000009c0  00007000  00007000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000006  00800060  000079c0  00000a34  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000039  00800066  000079c6  00000a3a  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  00000a3a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000016a  00000000  00000000  00000a5a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000d36  00000000  00000000  00000bc4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000035f  00000000  00000000  000018fa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000007be  00000000  00000000  00001c59  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000040  00000000  00000000  00002418  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000048d  00000000  00000000  00002458  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000061c  00000000  00000000  000028e5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000148  00000000  00000000  00002f01  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00007000 <__vectors>:
+    7000:	0c 94 53 38 	jmp	0x70a6	; 0x70a6 <__ctors_end>
+    7004:	0c 94 8f 38 	jmp	0x711e	; 0x711e <__vector_1>
+    7008:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    700c:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7010:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7014:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7018:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    701c:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7020:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7024:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7028:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    702c:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7030:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7034:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7038:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    703c:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7040:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7044:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7048:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    704c:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+    7050:	0c 94 70 38 	jmp	0x70e0	; 0x70e0 <__bad_interrupt>
+
+00007054 <usbDescriptorString0>:
+    7054:	04 03 09 04                                         ....
+
+00007058 <usbDescriptorStringVendor>:
+    7058:	1c 03 77 00 77 00 77 00 2e 00 66 00 69 00 73 00     ..w.w.w...f.i.s.
+    7068:	63 00 68 00 6c 00 2e 00 64 00 65 00                 c.h.l...d.e.
+
+00007074 <usbDescriptorStringDevice>:
+    7074:	0e 03 55 00 53 00 42 00 61 00 73 00 70 00           ..U.S.B.a.s.p.
+
+00007082 <usbDescriptorDevice>:
+    7082:	12 01 10 01 ff 00 00 08 c0 16 dc 05 02 01 01 02     ................
+    7092:	00 01                                               ..
+
+00007094 <usbDescriptorConfiguration>:
+    7094:	09 02 12 00 01 01 00 80 32 09 04 00 00 00 00 00     ........2.......
+	...
+
+000070a6 <__ctors_end>:
+    70a6:	11 24       	eor	r1, r1
+    70a8:	1f be       	out	0x3f, r1	; 63
+    70aa:	cf e5       	ldi	r28, 0x5F	; 95
+    70ac:	d8 e0       	ldi	r29, 0x08	; 8
+    70ae:	de bf       	out	0x3e, r29	; 62
+    70b0:	cd bf       	out	0x3d, r28	; 61
+
+000070b2 <__do_copy_data>:
+    70b2:	10 e0       	ldi	r17, 0x00	; 0
+    70b4:	a0 e6       	ldi	r26, 0x60	; 96
+    70b6:	b0 e0       	ldi	r27, 0x00	; 0
+    70b8:	e0 ec       	ldi	r30, 0xC0	; 192
+    70ba:	f9 e7       	ldi	r31, 0x79	; 121
+    70bc:	02 c0       	rjmp	.+4      	; 0x70c2 <.do_copy_data_start>
+
+000070be <.do_copy_data_loop>:
+    70be:	05 90       	lpm	r0, Z+
+    70c0:	0d 92       	st	X+, r0
+
+000070c2 <.do_copy_data_start>:
+    70c2:	a6 36       	cpi	r26, 0x66	; 102
+    70c4:	b1 07       	cpc	r27, r17
+    70c6:	d9 f7       	brne	.-10     	; 0x70be <.do_copy_data_loop>
+
+000070c8 <__do_clear_bss>:
+    70c8:	10 e0       	ldi	r17, 0x00	; 0
+    70ca:	a6 e6       	ldi	r26, 0x66	; 102
+    70cc:	b0 e0       	ldi	r27, 0x00	; 0
+    70ce:	01 c0       	rjmp	.+2      	; 0x70d2 <.do_clear_bss_start>
+
+000070d0 <.do_clear_bss_loop>:
+    70d0:	1d 92       	st	X+, r1
+
+000070d2 <.do_clear_bss_start>:
+    70d2:	af 39       	cpi	r26, 0x9F	; 159
+    70d4:	b1 07       	cpc	r27, r17
+    70d6:	e1 f7       	brne	.-8      	; 0x70d0 <.do_clear_bss_loop>
+    70d8:	0e 94 f2 39 	call	0x73e4	; 0x73e4 <main>
+    70dc:	0c 94 de 3c 	jmp	0x79bc	; 0x79bc <_exit>
+
+000070e0 <__bad_interrupt>:
+    70e0:	0c 94 00 38 	jmp	0x7000	; 0x7000 <__vectors>
+
+000070e4 <usbCrc16>:
+    70e4:	a8 2f       	mov	r26, r24
+    70e6:	b9 2f       	mov	r27, r25
+    70e8:	8f ef       	ldi	r24, 0xFF	; 255
+    70ea:	9f ef       	ldi	r25, 0xFF	; 255
+    70ec:	41 e0       	ldi	r20, 0x01	; 1
+    70ee:	50 ea       	ldi	r21, 0xA0	; 160
+
+000070f0 <crcByteLoop>:
+    70f0:	61 50       	subi	r22, 0x01	; 1
+    70f2:	70 f0       	brcs	.+28     	; 0x7110 <crcReady>
+    70f4:	2d 91       	ld	r18, X+
+    70f6:	38 e0       	ldi	r19, 0x08	; 8
+
+000070f8 <crcBitLoop>:
+    70f8:	72 2f       	mov	r23, r18
+    70fa:	78 27       	eor	r23, r24
+    70fc:	96 95       	lsr	r25
+    70fe:	87 95       	ror	r24
+    7100:	26 95       	lsr	r18
+    7102:	70 ff       	sbrs	r23, 0
+    7104:	02 c0       	rjmp	.+4      	; 0x710a <crcNoXor>
+    7106:	84 27       	eor	r24, r20
+    7108:	95 27       	eor	r25, r21
+
+0000710a <crcNoXor>:
+    710a:	3a 95       	dec	r19
+    710c:	a9 f7       	brne	.-22     	; 0x70f8 <crcBitLoop>
+    710e:	f0 cf       	rjmp	.-32     	; 0x70f0 <crcByteLoop>
+
+00007110 <crcReady>:
+    7110:	80 95       	com	r24
+    7112:	90 95       	com	r25
+    7114:	08 95       	ret
+
+00007116 <usbCrc16Append>:
+    7116:	e6 df       	rcall	.-52     	; 0x70e4 <usbCrc16>
+    7118:	8d 93       	st	X+, r24
+    711a:	9d 93       	st	X+, r25
+    711c:	08 95       	ret
+
+0000711e <__vector_1>:
+    711e:	cf 93       	push	r28
+    7120:	cf b7       	in	r28, 0x3f	; 63
+    7122:	cf 93       	push	r28
+
+00007124 <waitForJ>:
+    7124:	84 9b       	sbis	0x10, 4	; 16
+    7126:	fe cf       	rjmp	.-4      	; 0x7124 <waitForJ>
+
+00007128 <waitForK>:
+    7128:	84 9b       	sbis	0x10, 4	; 16
+    712a:	09 c0       	rjmp	.+18     	; 0x713e <foundK>
+    712c:	84 9b       	sbis	0x10, 4	; 16
+    712e:	07 c0       	rjmp	.+14     	; 0x713e <foundK>
+    7130:	84 9b       	sbis	0x10, 4	; 16
+    7132:	05 c0       	rjmp	.+10     	; 0x713e <foundK>
+    7134:	84 9b       	sbis	0x10, 4	; 16
+    7136:	03 c0       	rjmp	.+6      	; 0x713e <foundK>
+    7138:	84 9b       	sbis	0x10, 4	; 16
+    713a:	01 c0       	rjmp	.+2      	; 0x713e <foundK>
+    713c:	a1 c0       	rjmp	.+322    	; 0x7280 <sofError>
+
+0000713e <foundK>:
+    713e:	df 93       	push	r29
+    7140:	c0 91 82 00 	lds	r28, 0x0082
+    7144:	dd 27       	eor	r29, r29
+    7146:	c7 57       	subi	r28, 0x77	; 119
+    7148:	df 4f       	sbci	r29, 0xFF	; 255
+    714a:	84 9b       	sbis	0x10, 4	; 16
+    714c:	02 c0       	rjmp	.+4      	; 0x7152 <haveTwoBitsK>
+    714e:	df 91       	pop	r29
+    7150:	eb cf       	rjmp	.-42     	; 0x7128 <waitForK>
+
+00007152 <haveTwoBitsK>:
+    7152:	2f 93       	push	r18
+    7154:	0f 93       	push	r16
+    7156:	1f 93       	push	r17
+    7158:	00 b3       	in	r16, 0x10	; 16
+    715a:	2f ef       	ldi	r18, 0xFF	; 255
+    715c:	04 fb       	bst	r16, 4
+    715e:	20 f9       	bld	r18, 0
+    7160:	4f 93       	push	r20
+    7162:	3f 93       	push	r19
+    7164:	10 b3       	in	r17, 0x10	; 16
+    7166:	4f ef       	ldi	r20, 0xFF	; 255
+    7168:	01 27       	eor	r16, r17
+    716a:	04 fb       	bst	r16, 4
+    716c:	21 f9       	bld	r18, 1
+    716e:	3b e0       	ldi	r19, 0x0B	; 11
+    7170:	31 c0       	rjmp	.+98     	; 0x71d4 <rxbit2>
+
+00007172 <unstuff0>:
+    7172:	4e 7f       	andi	r20, 0xFE	; 254
+    7174:	01 2f       	mov	r16, r17
+    7176:	10 b3       	in	r17, 0x10	; 16
+    7178:	21 60       	ori	r18, 0x01	; 1
+    717a:	28 c0       	rjmp	.+80     	; 0x71cc <didUnstuff0>
+
+0000717c <unstuff1>:
+    717c:	10 2f       	mov	r17, r16
+    717e:	4d 7f       	andi	r20, 0xFD	; 253
+    7180:	22 60       	ori	r18, 0x02	; 2
+    7182:	00 00       	nop
+    7184:	00 b3       	in	r16, 0x10	; 16
+    7186:	29 c0       	rjmp	.+82     	; 0x71da <didUnstuff1>
+
+00007188 <unstuff2>:
+    7188:	4b 7f       	andi	r20, 0xFB	; 251
+    718a:	24 60       	ori	r18, 0x04	; 4
+    718c:	01 2f       	mov	r16, r17
+    718e:	00 00       	nop
+    7190:	10 b3       	in	r17, 0x10	; 16
+    7192:	2b c0       	rjmp	.+86     	; 0x71ea <didUnstuff2>
+
+00007194 <unstuff3>:
+    7194:	10 b3       	in	r17, 0x10	; 16
+    7196:	47 7f       	andi	r20, 0xF7	; 247
+    7198:	28 60       	ori	r18, 0x08	; 8
+    719a:	2a c0       	rjmp	.+84     	; 0x71f0 <didUnstuff3>
+
+0000719c <unstuff4>:
+    719c:	4f 7e       	andi	r20, 0xEF	; 239
+    719e:	00 b3       	in	r16, 0x10	; 16
+    71a0:	20 61       	ori	r18, 0x10	; 16
+    71a2:	2c c0       	rjmp	.+88     	; 0x71fc <didUnstuff4>
+
+000071a4 <unstuff5>:
+    71a4:	4f 7d       	andi	r20, 0xDF	; 223
+    71a6:	10 b3       	in	r17, 0x10	; 16
+    71a8:	20 62       	ori	r18, 0x20	; 32
+    71aa:	2f c0       	rjmp	.+94     	; 0x720a <didUnstuff5>
+
+000071ac <unstuff6>:
+    71ac:	4f 7b       	andi	r20, 0xBF	; 191
+    71ae:	00 b3       	in	r16, 0x10	; 16
+    71b0:	20 64       	ori	r18, 0x40	; 64
+    71b2:	32 c0       	rjmp	.+100    	; 0x7218 <didUnstuff6>
+
+000071b4 <rxLoop>:
+    71b4:	42 27       	eor	r20, r18
+    71b6:	00 b3       	in	r16, 0x10	; 16
+    71b8:	49 93       	st	Y+, r20
+    71ba:	4f ef       	ldi	r20, 0xFF	; 255
+    71bc:	00 00       	nop
+    71be:	10 27       	eor	r17, r16
+    71c0:	14 fb       	bst	r17, 4
+    71c2:	20 f9       	bld	r18, 0
+    71c4:	10 b3       	in	r17, 0x10	; 16
+    71c6:	14 71       	andi	r17, 0x14	; 20
+    71c8:	c9 f1       	breq	.+114    	; 0x723c <se0>
+    71ca:	29 7f       	andi	r18, 0xF9	; 249
+
+000071cc <didUnstuff0>:
+    71cc:	91 f2       	breq	.-92     	; 0x7172 <unstuff0>
+    71ce:	01 27       	eor	r16, r17
+    71d0:	04 fb       	bst	r16, 4
+    71d2:	21 f9       	bld	r18, 1
+
+000071d4 <rxbit2>:
+    71d4:	00 b3       	in	r16, 0x10	; 16
+    71d6:	23 7f       	andi	r18, 0xF3	; 243
+    71d8:	89 f2       	breq	.-94     	; 0x717c <unstuff1>
+
+000071da <didUnstuff1>:
+    71da:	31 50       	subi	r19, 0x01	; 1
+    71dc:	58 f1       	brcs	.+86     	; 0x7234 <overflow>
+    71de:	10 27       	eor	r17, r16
+    71e0:	14 fb       	bst	r17, 4
+    71e2:	22 f9       	bld	r18, 2
+    71e4:	10 b3       	in	r17, 0x10	; 16
+    71e6:	27 7e       	andi	r18, 0xE7	; 231
+    71e8:	79 f2       	breq	.-98     	; 0x7188 <unstuff2>
+
+000071ea <didUnstuff2>:
+    71ea:	01 27       	eor	r16, r17
+    71ec:	04 fb       	bst	r16, 4
+    71ee:	23 f9       	bld	r18, 3
+
+000071f0 <didUnstuff3>:
+    71f0:	2f 7c       	andi	r18, 0xCF	; 207
+    71f2:	81 f2       	breq	.-96     	; 0x7194 <unstuff3>
+    71f4:	00 b3       	in	r16, 0x10	; 16
+    71f6:	10 27       	eor	r17, r16
+    71f8:	14 fb       	bst	r17, 4
+    71fa:	24 f9       	bld	r18, 4
+
+000071fc <didUnstuff4>:
+    71fc:	2f 79       	andi	r18, 0x9F	; 159
+    71fe:	71 f2       	breq	.-100    	; 0x719c <unstuff4>
+    7200:	00 c0       	rjmp	.+0      	; 0x7202 <didUnstuff4+0x6>
+    7202:	10 b3       	in	r17, 0x10	; 16
+    7204:	01 27       	eor	r16, r17
+    7206:	04 fb       	bst	r16, 4
+    7208:	25 f9       	bld	r18, 5
+
+0000720a <didUnstuff5>:
+    720a:	2f 73       	andi	r18, 0x3F	; 63
+    720c:	59 f2       	breq	.-106    	; 0x71a4 <unstuff5>
+    720e:	00 c0       	rjmp	.+0      	; 0x7210 <didUnstuff5+0x6>
+    7210:	00 b3       	in	r16, 0x10	; 16
+    7212:	10 27       	eor	r17, r16
+    7214:	14 fb       	bst	r17, 4
+    7216:	26 f9       	bld	r18, 6
+
+00007218 <didUnstuff6>:
+    7218:	22 30       	cpi	r18, 0x02	; 2
+    721a:	40 f2       	brcs	.-112    	; 0x71ac <unstuff6>
+    721c:	00 c0       	rjmp	.+0      	; 0x721e <didUnstuff6+0x6>
+    721e:	10 b3       	in	r17, 0x10	; 16
+    7220:	01 27       	eor	r16, r17
+    7222:	04 fb       	bst	r16, 4
+    7224:	27 f9       	bld	r18, 7
+
+00007226 <didUnstuff7>:
+    7226:	24 30       	cpi	r18, 0x04	; 4
+    7228:	28 f6       	brcc	.-118    	; 0x71b4 <rxLoop>
+
+0000722a <unstuff7>:
+    722a:	4f 77       	andi	r20, 0x7F	; 127
+    722c:	20 68       	ori	r18, 0x80	; 128
+    722e:	10 b3       	in	r17, 0x10	; 16
+    7230:	00 00       	nop
+    7232:	f9 cf       	rjmp	.-14     	; 0x7226 <didUnstuff7>
+
+00007234 <overflow>:
+    7234:	10 e4       	ldi	r17, 0x40	; 64
+    7236:	1a bf       	out	0x3a, r17	; 58
+
+00007238 <ignorePacket>:
+    7238:	00 27       	eor	r16, r16
+    723a:	17 c0       	rjmp	.+46     	; 0x726a <handleSetupOrOut>
+
+0000723c <se0>:
+    723c:	3b 50       	subi	r19, 0x0B	; 11
+    723e:	31 95       	neg	r19
+    7240:	c3 1b       	sub	r28, r19
+    7242:	d0 40       	sbci	r29, 0x00	; 0
+    7244:	10 e4       	ldi	r17, 0x40	; 64
+    7246:	1a bf       	out	0x3a, r17	; 58
+    7248:	08 81       	ld	r16, Y
+    724a:	03 3c       	cpi	r16, 0xC3	; 195
+    724c:	e9 f0       	breq	.+58     	; 0x7288 <handleData>
+    724e:	0b 34       	cpi	r16, 0x4B	; 75
+    7250:	d9 f0       	breq	.+54     	; 0x7288 <handleData>
+    7252:	20 91 80 00 	lds	r18, 0x0080
+    7256:	19 81       	ldd	r17, Y+1	; 0x01
+    7258:	11 0f       	add	r17, r17
+    725a:	12 13       	cpse	r17, r18
+    725c:	ed cf       	rjmp	.-38     	; 0x7238 <ignorePacket>
+    725e:	09 36       	cpi	r16, 0x69	; 105
+    7260:	41 f1       	breq	.+80     	; 0x72b2 <handleIn>
+    7262:	0d 32       	cpi	r16, 0x2D	; 45
+    7264:	11 f0       	breq	.+4      	; 0x726a <handleSetupOrOut>
+    7266:	01 3e       	cpi	r16, 0xE1	; 225
+    7268:	39 f7       	brne	.-50     	; 0x7238 <ignorePacket>
+
+0000726a <handleSetupOrOut>:
+    726a:	00 93 87 00 	sts	0x0087, r16
+
+0000726e <doReturn>:
+    726e:	3f 91       	pop	r19
+    7270:	4f 91       	pop	r20
+    7272:	1f 91       	pop	r17
+    7274:	0f 91       	pop	r16
+    7276:	2f 91       	pop	r18
+    7278:	df 91       	pop	r29
+    727a:	ca b7       	in	r28, 0x3a	; 58
+    727c:	c6 fd       	sbrc	r28, 6
+    727e:	52 cf       	rjmp	.-348    	; 0x7124 <waitForJ>
+
+00007280 <sofError>:
+    7280:	cf 91       	pop	r28
+    7282:	cf bf       	out	0x3f, r28	; 63
+    7284:	cf 91       	pop	r28
+    7286:	18 95       	reti
+
+00007288 <handleData>:
+    7288:	00 91 87 00 	lds	r16, 0x0087
+    728c:	00 23       	and	r16, r16
+    728e:	79 f3       	breq	.-34     	; 0x726e <doReturn>
+    7290:	10 91 85 00 	lds	r17, 0x0085
+    7294:	11 23       	and	r17, r17
+    7296:	49 f5       	brne	.+82     	; 0x72ea <sendNakAndReti>
+    7298:	34 30       	cpi	r19, 0x04	; 4
+    729a:	4a f1       	brmi	.+82     	; 0x72ee <sendAckAndReti>
+    729c:	30 93 85 00 	sts	0x0085, r19
+    72a0:	00 93 81 00 	sts	0x0081, r16
+    72a4:	10 91 82 00 	lds	r17, 0x0082
+    72a8:	3b e0       	ldi	r19, 0x0B	; 11
+    72aa:	31 1b       	sub	r19, r17
+    72ac:	30 93 82 00 	sts	0x0082, r19
+    72b0:	1e c0       	rjmp	.+60     	; 0x72ee <sendAckAndReti>
+
+000072b2 <handleIn>:
+    72b2:	00 91 85 00 	lds	r16, 0x0085
+    72b6:	01 30       	cpi	r16, 0x01	; 1
+    72b8:	c4 f4       	brge	.+48     	; 0x72ea <sendNakAndReti>
+    72ba:	0a e5       	ldi	r16, 0x5A	; 90
+    72bc:	30 91 61 00 	lds	r19, 0x0061
+    72c0:	34 fd       	sbrc	r19, 4
+    72c2:	17 c0       	rjmp	.+46     	; 0x72f2 <sendCntAndReti>
+    72c4:	00 93 61 00 	sts	0x0061, r16
+    72c8:	c5 e7       	ldi	r28, 0x75	; 117
+    72ca:	d0 e0       	ldi	r29, 0x00	; 0
+    72cc:	16 c0       	rjmp	.+44     	; 0x72fa <usbSendAndReti>
+
+000072ce <bitstuff0>:
+    72ce:	05 27       	eor	r16, r21
+    72d0:	10 e0       	ldi	r17, 0x00	; 0
+    72d2:	02 bb       	out	0x12, r16	; 18
+    72d4:	1f c0       	rjmp	.+62     	; 0x7314 <didStuff0>
+
+000072d6 <bitstuff1>:
+    72d6:	05 27       	eor	r16, r21
+    72d8:	22 c0       	rjmp	.+68     	; 0x731e <didStuff1>
+
+000072da <bitstuff2>:
+    72da:	05 27       	eor	r16, r21
+    72dc:	27 c0       	rjmp	.+78     	; 0x732c <didStuff2>
+
+000072de <bitstuff3>:
+    72de:	05 27       	eor	r16, r21
+    72e0:	2c c0       	rjmp	.+88     	; 0x733a <didStuff3>
+
+000072e2 <bitstuff4>:
+    72e2:	05 27       	eor	r16, r21
+    72e4:	10 e0       	ldi	r17, 0x00	; 0
+    72e6:	02 bb       	out	0x12, r16	; 18
+    72e8:	33 c0       	rjmp	.+102    	; 0x7350 <didStuff4>
+
+000072ea <sendNakAndReti>:
+    72ea:	4a e5       	ldi	r20, 0x5A	; 90
+    72ec:	03 c0       	rjmp	.+6      	; 0x72f4 <usbSendX3>
+
+000072ee <sendAckAndReti>:
+    72ee:	42 ed       	ldi	r20, 0xD2	; 210
+    72f0:	01 c0       	rjmp	.+2      	; 0x72f4 <usbSendX3>
+
+000072f2 <sendCntAndReti>:
+    72f2:	43 2f       	mov	r20, r19
+
+000072f4 <usbSendX3>:
+    72f4:	c4 e1       	ldi	r28, 0x14	; 20
+    72f6:	d0 e0       	ldi	r29, 0x00	; 0
+    72f8:	32 e0       	ldi	r19, 0x02	; 2
+
+000072fa <usbSendAndReti>:
+    72fa:	11 b3       	in	r17, 0x11	; 17
+    72fc:	14 61       	ori	r17, 0x14	; 20
+    72fe:	94 9a       	sbi	0x12, 4	; 18
+    7300:	02 b3       	in	r16, 0x12	; 18
+    7302:	11 bb       	out	0x11, r17	; 17
+    7304:	5f 93       	push	r21
+    7306:	54 e1       	ldi	r21, 0x14	; 20
+    7308:	20 e8       	ldi	r18, 0x80	; 128
+
+0000730a <txLoop>:
+    730a:	20 ff       	sbrs	r18, 0
+    730c:	05 27       	eor	r16, r21
+    730e:	02 bb       	out	0x12, r16	; 18
+    7310:	27 95       	ror	r18
+    7312:	17 95       	ror	r17
+
+00007314 <didStuff0>:
+    7314:	1c 3f       	cpi	r17, 0xFC	; 252
+    7316:	d8 f6       	brcc	.-74     	; 0x72ce <bitstuff0>
+    7318:	20 ff       	sbrs	r18, 0
+    731a:	05 27       	eor	r16, r21
+    731c:	27 95       	ror	r18
+
+0000731e <didStuff1>:
+    731e:	02 bb       	out	0x12, r16	; 18
+    7320:	17 95       	ror	r17
+    7322:	1c 3f       	cpi	r17, 0xFC	; 252
+    7324:	c0 f6       	brcc	.-80     	; 0x72d6 <bitstuff1>
+    7326:	20 ff       	sbrs	r18, 0
+    7328:	05 27       	eor	r16, r21
+    732a:	27 95       	ror	r18
+
+0000732c <didStuff2>:
+    732c:	17 95       	ror	r17
+    732e:	02 bb       	out	0x12, r16	; 18
+    7330:	1c 3f       	cpi	r17, 0xFC	; 252
+    7332:	98 f6       	brcc	.-90     	; 0x72da <bitstuff2>
+    7334:	20 ff       	sbrs	r18, 0
+    7336:	05 27       	eor	r16, r21
+    7338:	27 95       	ror	r18
+
+0000733a <didStuff3>:
+    733a:	17 95       	ror	r17
+    733c:	1c 3f       	cpi	r17, 0xFC	; 252
+    733e:	02 bb       	out	0x12, r16	; 18
+    7340:	70 f6       	brcc	.-100    	; 0x72de <bitstuff3>
+    7342:	00 c0       	rjmp	.+0      	; 0x7344 <didStuff3+0xa>
+    7344:	49 91       	ld	r20, Y+
+    7346:	20 ff       	sbrs	r18, 0
+    7348:	05 27       	eor	r16, r21
+    734a:	02 bb       	out	0x12, r16	; 18
+    734c:	27 95       	ror	r18
+    734e:	17 95       	ror	r17
+
+00007350 <didStuff4>:
+    7350:	1c 3f       	cpi	r17, 0xFC	; 252
+    7352:	38 f6       	brcc	.-114    	; 0x72e2 <bitstuff4>
+    7354:	20 ff       	sbrs	r18, 0
+    7356:	05 27       	eor	r16, r21
+    7358:	27 95       	ror	r18
+
+0000735a <didStuff5>:
+    735a:	02 bb       	out	0x12, r16	; 18
+    735c:	17 95       	ror	r17
+    735e:	1c 3f       	cpi	r17, 0xFC	; 252
+    7360:	38 f5       	brcc	.+78     	; 0x73b0 <bitstuff5>
+    7362:	20 ff       	sbrs	r18, 0
+    7364:	05 27       	eor	r16, r21
+    7366:	27 95       	ror	r18
+
+00007368 <didStuff6>:
+    7368:	17 95       	ror	r17
+    736a:	02 bb       	out	0x12, r16	; 18
+    736c:	1c 3f       	cpi	r17, 0xFC	; 252
+    736e:	10 f5       	brcc	.+68     	; 0x73b4 <bitstuff6>
+    7370:	20 ff       	sbrs	r18, 0
+    7372:	05 27       	eor	r16, r21
+    7374:	27 95       	ror	r18
+
+00007376 <didStuff7>:
+    7376:	17 95       	ror	r17
+    7378:	1c 3f       	cpi	r17, 0xFC	; 252
+    737a:	02 bb       	out	0x12, r16	; 18
+    737c:	e8 f4       	brcc	.+58     	; 0x73b8 <bitstuff7>
+    737e:	24 2f       	mov	r18, r20
+    7380:	3a 95       	dec	r19
+    7382:	19 f6       	brne	.-122    	; 0x730a <txLoop>
+    7384:	0b 7e       	andi	r16, 0xEB	; 235
+    7386:	5f 91       	pop	r21
+    7388:	02 bb       	out	0x12, r16	; 18
+    738a:	10 91 86 00 	lds	r17, 0x0086
+    738e:	11 0f       	add	r17, r17
+    7390:	c6 51       	subi	r28, 0x16	; 22
+    7392:	d0 40       	sbci	r29, 0x00	; 0
+    7394:	11 f0       	breq	.+4      	; 0x739a <skipAddrAssign>
+    7396:	10 93 80 00 	sts	0x0080, r17
+
+0000739a <skipAddrAssign>:
+    739a:	10 e4       	ldi	r17, 0x40	; 64
+    739c:	1a bf       	out	0x3a, r17	; 58
+    739e:	00 61       	ori	r16, 0x10	; 16
+    73a0:	11 b3       	in	r17, 0x11	; 17
+    73a2:	1b 7e       	andi	r17, 0xEB	; 235
+    73a4:	40 2f       	mov	r20, r16
+    73a6:	4b 7e       	andi	r20, 0xEB	; 235
+    73a8:	02 bb       	out	0x12, r16	; 18
+    73aa:	11 bb       	out	0x11, r17	; 17
+    73ac:	42 bb       	out	0x12, r20	; 18
+    73ae:	5f cf       	rjmp	.-322    	; 0x726e <doReturn>
+
+000073b0 <bitstuff5>:
+    73b0:	05 27       	eor	r16, r21
+    73b2:	d3 cf       	rjmp	.-90     	; 0x735a <didStuff5>
+
+000073b4 <bitstuff6>:
+    73b4:	05 27       	eor	r16, r21
+    73b6:	d8 cf       	rjmp	.-80     	; 0x7368 <didStuff6>
+
+000073b8 <bitstuff7>:
+    73b8:	05 27       	eor	r16, r21
+    73ba:	dd cf       	rjmp	.-70     	; 0x7376 <didStuff7>
+
+000073bc <eeprom_read_byte>:
+
+/** \ingroup avr_eeprom
+    Read one byte from EEPROM address \a __p.
+ */
+__ATTR_PURE__ static __inline__ uint8_t eeprom_read_byte (const uint8_t *__p)
+{
+    73bc:	9c 01       	movw	r18, r24
+    do {} while (!eeprom_is_ready ());
+    73be:	e1 99       	sbic	0x1c, 1	; 28
+    73c0:	fe cf       	rjmp	.-4      	; 0x73be <eeprom_read_byte+0x2>
+#if	E2END <= 0xFF
+    EEARL = (unsigned)__p;
+#else
+    EEAR = (unsigned)__p;
+    73c2:	3f bb       	out	0x1f, r19	; 31
+    73c4:	2e bb       	out	0x1e, r18	; 30
+#endif
+   ///////////////////////////////////////////////////////////////
+   // here fixed ERRATA Bug "Reading EEPROM by using ST or STS 
+   //  to set EERE bit triggers unexpected interrupt request"
+   // EECR |= (1 << EERE);
+   __asm__ __volatile__ (
+    73c6:	e0 9a       	sbi	0x1c, 0	; 28
+        "sbi	%[__eecr], %[__eere]	\n\t"
+        :
+        : [__eecr]  "i" (_SFR_IO_ADDR(EECR)),
+          [__eere]  "i" (EERE)
+    );
+   return EEDR;
+    73c8:	8d b3       	in	r24, 0x1d	; 29
+}
+    73ca:	08 95       	ret
+
+000073cc <eeprom_write_byte>:
+
+/** \ingroup avr_eeprom
+    Write a byte \a __value to EEPROM address \a __p.
+ */
+static __inline__ void eeprom_write_byte (uint8_t *__p, uint8_t __value)
+{
+    73cc:	9c 01       	movw	r18, r24
+    do {} while (!eeprom_is_ready ());
+    73ce:	e1 99       	sbic	0x1c, 1	; 28
+    73d0:	fe cf       	rjmp	.-4      	; 0x73ce <eeprom_write_byte+0x2>
+#endif
+
+#if	E2END <= 0xFF
+    EEARL = (unsigned)__p;
+#else
+    EEAR = (unsigned)__p;
+    73d2:	3f bb       	out	0x1f, r19	; 31
+    73d4:	2e bb       	out	0x1e, r18	; 30
+#endif
+    EEDR = __value;
+    73d6:	6d bb       	out	0x1d, r22	; 29
+
+    __asm__ __volatile__ (
+    73d8:	0f b6       	in	r0, 0x3f	; 63
+    73da:	f8 94       	cli
+    73dc:	e2 9a       	sbi	0x1c, 2	; 28
+    73de:	e1 9a       	sbi	0x1c, 1	; 28
+    73e0:	0f be       	out	0x3f, r0	; 63
+          [__sreg]  "i" (_SFR_IO_ADDR(SREG)),
+          [__eemwe] "i" (EEMWE),
+          [__eewe]  "i" (EEWE)
+        : "r0"
+    );
+}
+    73e2:	08 95       	ret
+
+000073e4 <main>:
+    usbDeviceConnect();
+    sei();
+}
+
+int main(void)
+{
+    73e4:	2f 92       	push	r2
+    73e6:	3f 92       	push	r3
+    73e8:	4f 92       	push	r4
+    73ea:	5f 92       	push	r5
+    73ec:	6f 92       	push	r6
+    73ee:	7f 92       	push	r7
+    73f0:	8f 92       	push	r8
+    73f2:	9f 92       	push	r9
+    73f4:	af 92       	push	r10
+    73f6:	bf 92       	push	r11
+    73f8:	cf 92       	push	r12
+    73fa:	df 92       	push	r13
+    73fc:	ef 92       	push	r14
+    73fe:	ff 92       	push	r15
+    7400:	0f 93       	push	r16
+    7402:	1f 93       	push	r17
+    7404:	cf 93       	push	r28
+    7406:	df 93       	push	r29
+ * Prepare IO-ports for detection of bootloader-condition, which happens in
+ * bootLoaderCondition().
+ */
+static inline void bootLoaderInit(void) 
+{
+    DDRB  |= (1 << LED_RED_BIT);   //выход для красного светодиода
+    7408:	b8 9a       	sbi	0x17, 0	; 23
+    //на PB5 (MOSI, контакт 4 коннектора U1 ISP) подключаем pull-up, а также зажигаем светодиод
+    PORTB |= (1 << PB5)|(1 << LED_RED_BIT);
+    740a:	88 b3       	in	r24, 0x18	; 24
+    740c:	81 62       	ori	r24, 0x21	; 33
+    740e:	88 bb       	out	0x18, r24	; 24
+    /* initialize  */
+    bootLoaderInit();
+    odDebugInit();
+    DBG1(0x00, 0, 0);
+#ifndef NO_FLASH_WRITE
+    GICR = (1 << IVCE);  /* enable change of interrupt vectors */
+    7410:	81 e0       	ldi	r24, 0x01	; 1
+    7412:	8b bf       	out	0x3b, r24	; 59
+    GICR = (1 << IVSEL); /* move interrupts to boot flash section */
+    7414:	82 e0       	ldi	r24, 0x02	; 2
+    7416:	8b bf       	out	0x3b, r24	; 59
+ * the LEDs.
+ * \return 1 if bootloader should be active, 0 otherwise
+ */
+static inline uint8_t bootLoaderCondition() 
+{
+    if (!(PINB & (1 << PB5))) 
+    7418:	b5 99       	sbic	0x16, 5	; 22
+    741a:	4e c2       	rjmp	.+1180   	; 0x78b8 <main+0x4d4>
+/* ------------------------------------------------------------------------- */
+
+USB_PUBLIC void usbInit(void)
+{
+#if USB_INTR_CFG_SET != 0
+    USB_INTR_CFG |= USB_INTR_CFG_SET;
+    741c:	85 b7       	in	r24, 0x35	; 53
+    741e:	83 60       	ori	r24, 0x03	; 3
+    7420:	85 bf       	out	0x35, r24	; 53
+#endif
+#if USB_INTR_CFG_CLR != 0
+    USB_INTR_CFG &= ~(USB_INTR_CFG_CLR);
+#endif
+    USB_INTR_ENABLE |= (1 << USB_INTR_ENABLE_BIT);
+    7422:	8b b7       	in	r24, 0x3b	; 59
+    7424:	80 64       	ori	r24, 0x40	; 64
+    7426:	8b bf       	out	0x3b, r24	; 59
+{
+uchar   i = 0;
+
+    usbInit();
+    /* enforce USB re-enumerate: */
+    usbDeviceDisconnect();  /* do this while interrupts are disabled */
+    7428:	8c 9a       	sbi	0x11, 4	; 17
+    742a:	20 e0       	ldi	r18, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+    742c:	48 eb       	ldi	r20, 0xB8	; 184
+    742e:	5b e0       	ldi	r21, 0x0B	; 11
+    7430:	04 c0       	rjmp	.+8      	; 0x743a <main+0x56>
+    while(--i){         /* fake USB disconnect for > 250 ms */
+        wdt_reset();
+    7432:	a8 95       	wdr
+    7434:	ca 01       	movw	r24, r20
+    7436:	01 97       	sbiw	r24, 0x01	; 1
+    7438:	f1 f7       	brne	.-4      	; 0x7436 <main+0x52>
+uchar   i = 0;
+
+    usbInit();
+    /* enforce USB re-enumerate: */
+    usbDeviceDisconnect();  /* do this while interrupts are disabled */
+    while(--i){         /* fake USB disconnect for > 250 ms */
+    743a:	21 50       	subi	r18, 0x01	; 1
+    743c:	d1 f7       	brne	.-12     	; 0x7432 <main+0x4e>
+        wdt_reset();
+        _delay_ms(1);
+    }
+    usbDeviceConnect();
+    743e:	8c 98       	cbi	0x11, 4	; 17
+    sei();
+    7440:	78 94       	sei
+    7442:	cc 24       	eor	r12, r12
+    7444:	dd 24       	eor	r13, r13
+    7446:	c0 e0       	ldi	r28, 0x00	; 0
+    7448:	d0 e0       	ldi	r29, 0x00	; 0
+            uchar rval = usbFunctionWrite(data, len);
+            replyLen = 0xff;
+            if(rval == 0xff){       /* an error occurred */
+                usbMsgLen = 0xff;   /* cancel potentially pending data packet for ACK */
+                usbTxLen = USBPID_STALL;
+            }else if(rval != 0){    /* This was the final package */
+    744a:	ee 24       	eor	r14, r14
+    744c:	ea 94       	dec	r14
+            if(type == USBRQ_TYPE_STANDARD){
+                #define SET_REPLY_LEN(len)  replyLen = (len); usbMsgPtr = replyData
+                /* This macro ensures that replyLen and usbMsgPtr are always set in the same way.
+                 * That allows optimization of common code in if() branches */
+                uchar *replyData = usbTxBuf + 9; /* there is 3 bytes free space at the end of the buffer */
+                replyData[0] = 0;   /* common to USBRQ_GET_STATUS and USBRQ_GET_INTERFACE */
+    744e:	4e e7       	ldi	r20, 0x7E	; 126
+    7450:	a4 2e       	mov	r10, r20
+    7452:	40 e0       	ldi	r20, 0x00	; 0
+    7454:	b4 2e       	mov	r11, r20
+                        replyLen = usbFunctionDescriptor(rq);
+#else   /* USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_DYNAMIC */
+                        if(rq->wValue.bytes[0] == 0){   /* descriptor index */
+                            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_0, usbDescriptorString0)
+                        }else if(rq->wValue.bytes[0] == 1){
+                            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_VENDOR, usbDescriptorStringVendor)
+    7456:	38 e5       	ldi	r19, 0x58	; 88
+    7458:	83 2e       	mov	r8, r19
+    745a:	30 e7       	ldi	r19, 0x70	; 112
+    745c:	93 2e       	mov	r9, r19
+                        if(USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_RAM)
+                            flags &= ~USB_FLG_MSGPTR_IS_ROM;
+                        replyLen = usbFunctionDescriptor(rq);
+#else   /* USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_DYNAMIC */
+                        if(rq->wValue.bytes[0] == 0){   /* descriptor index */
+                            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_0, usbDescriptorString0)
+    745e:	24 e5       	ldi	r18, 0x54	; 84
+    7460:	62 2e       	mov	r6, r18
+    7462:	20 e7       	ldi	r18, 0x70	; 112
+    7464:	72 2e       	mov	r7, r18
+                }else if(rq->bRequest == USBRQ_GET_DESCRIPTOR){ /* 6 */
+                    flags = USB_FLG_MSGPTR_IS_ROM | USB_FLG_USE_DEFAULT_RW;
+                    if(rq->wValue.bytes[1] == USBDESCR_DEVICE){ /* 1 */
+                        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_DEVICE, usbDescriptorDevice)
+                    }else if(rq->wValue.bytes[1] == USBDESCR_CONFIG){   /* 2 */
+                        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_CONFIGURATION, usbDescriptorConfiguration)
+    7466:	94 e9       	ldi	r25, 0x94	; 148
+    7468:	49 2e       	mov	r4, r25
+    746a:	90 e7       	ldi	r25, 0x70	; 112
+    746c:	59 2e       	mov	r5, r25
+                }else if(rq->bRequest == USBRQ_SET_ADDRESS){    /* 5 */
+                    usbNewDeviceAddr = rq->wValue.bytes[0];
+                }else if(rq->bRequest == USBRQ_GET_DESCRIPTOR){ /* 6 */
+                    flags = USB_FLG_MSGPTR_IS_ROM | USB_FLG_USE_DEFAULT_RW;
+                    if(rq->wValue.bytes[1] == USBDESCR_DEVICE){ /* 1 */
+                        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_DEVICE, usbDescriptorDevice)
+    746e:	82 e8       	ldi	r24, 0x82	; 130
+    7470:	28 2e       	mov	r2, r24
+    7472:	80 e7       	ldi	r24, 0x70	; 112
+    7474:	38 2e       	mov	r3, r24
+USB_PUBLIC void usbPoll(void)
+{
+schar   len;
+uchar   i;
+
+    if((len = usbRxLen) > 0)
+    7476:	80 91 85 00 	lds	r24, 0x0085
+    747a:	18 16       	cp	r1, r24
+    747c:	0c f0       	brlt	.+2      	; 0x7480 <main+0x9c>
+    747e:	7e c1       	rjmp	.+764    	; 0x777c <main+0x398>
+ * need data integrity checks with this driver, check the CRC in your app
+ * code and report errors back to the host. Since the ACK was already sent,
+ * retries must be handled on application level.
+ * unsigned crc = usbCrc16(buffer + 1, usbRxLen - 3);
+ */
+        usbProcessRx(usbRxBuf + USB_BUFSIZE + 1 - usbInputBufOffset, len - 3);
+    7480:	08 2f       	mov	r16, r24
+    7482:	03 50       	subi	r16, 0x03	; 3
+    7484:	80 91 82 00 	lds	r24, 0x0082
+    7488:	ac e0       	ldi	r26, 0x0C	; 12
+    748a:	b0 e0       	ldi	r27, 0x00	; 0
+    748c:	a8 1b       	sub	r26, r24
+    748e:	b1 09       	sbc	r27, r1
+    7490:	a7 57       	subi	r26, 0x77	; 119
+    7492:	bf 4f       	sbci	r27, 0xFF	; 255
+    if(usbRxToken < 0x10){  /* endpoint number in usbRxToken */
+        usbFunctionWriteOut(data, len);
+        return; /* no reply expected, hence no usbMsgPtr, usbMsgFlags, usbMsgLen set */
+    }
+#endif
+    if(usbRxToken == (uchar)USBPID_SETUP){
+    7494:	80 91 81 00 	lds	r24, 0x0081
+    7498:	8d 32       	cpi	r24, 0x2D	; 45
+    749a:	09 f0       	breq	.+2      	; 0x749e <main+0xba>
+    749c:	ed c0       	rjmp	.+474    	; 0x7678 <main+0x294>
+        usbTxLen = USBPID_NAK;  /* abort pending transmit */
+    749e:	4a e5       	ldi	r20, 0x5A	; 90
+    74a0:	40 93 61 00 	sts	0x0061, r20
+        if(len == 8){   /* Setup size must be always 8 bytes. Ignore otherwise. */
+    74a4:	08 30       	cpi	r16, 0x08	; 8
+    74a6:	09 f0       	breq	.+2      	; 0x74aa <main+0xc6>
+    74a8:	5f c1       	rjmp	.+702    	; 0x7768 <main+0x384>
+            uchar type = rq->bmRequestType & USBRQ_TYPE_MASK;
+            if(type == USBRQ_TYPE_STANDARD){
+    74aa:	3c 91       	ld	r19, X
+    74ac:	83 2f       	mov	r24, r19
+    74ae:	80 76       	andi	r24, 0x60	; 96
+    74b0:	11 96       	adiw	r26, 0x01	; 1
+    74b2:	2c 91       	ld	r18, X
+    74b4:	11 97       	sbiw	r26, 0x01	; 1
+    74b6:	88 23       	and	r24, r24
+    74b8:	09 f0       	breq	.+2      	; 0x74bc <main+0xd8>
+    74ba:	66 c0       	rjmp	.+204    	; 0x7588 <main+0x1a4>
+                #define SET_REPLY_LEN(len)  replyLen = (len); usbMsgPtr = replyData
+                /* This macro ensures that replyLen and usbMsgPtr are always set in the same way.
+                 * That allows optimization of common code in if() branches */
+                uchar *replyData = usbTxBuf + 9; /* there is 3 bytes free space at the end of the buffer */
+                replyData[0] = 0;   /* common to USBRQ_GET_STATUS and USBRQ_GET_INTERFACE */
+    74bc:	10 92 7e 00 	sts	0x007E, r1
+                if(rq->bRequest == USBRQ_GET_STATUS){           /* 0 */
+    74c0:	22 23       	and	r18, r18
+    74c2:	49 f4       	brne	.+18     	; 0x74d6 <main+0xf2>
+#endif
+#if USB_CFG_HAVE_INTRIN_ENDPOINT && USB_CFG_IMPLEMENT_HALT
+                    if(recipient == USBRQ_RCPT_ENDPOINT && rq->wIndex.bytes[0] == 0x81)   /* request status for endpoint 1 */
+                        replyData[0] = usbTxLen1 == USBPID_STALL;
+#endif
+                    replyData[1] = 0;
+    74c4:	10 92 7f 00 	sts	0x007F, r1
+                    SET_REPLY_LEN(2);
+    74c8:	b0 92 84 00 	sts	0x0084, r11
+    74cc:	a0 92 83 00 	sts	0x0083, r10
+    74d0:	20 e8       	ldi	r18, 0x80	; 128
+    74d2:	92 e0       	ldi	r25, 0x02	; 2
+    74d4:	c2 c0       	rjmp	.+388    	; 0x765a <main+0x276>
+                }else if(rq->bRequest == USBRQ_SET_ADDRESS){    /* 5 */
+    74d6:	25 30       	cpi	r18, 0x05	; 5
+    74d8:	31 f4       	brne	.+12     	; 0x74e6 <main+0x102>
+                    usbNewDeviceAddr = rq->wValue.bytes[0];
+    74da:	12 96       	adiw	r26, 0x02	; 2
+    74dc:	8c 91       	ld	r24, X
+    74de:	12 97       	sbiw	r26, 0x02	; 2
+    74e0:	80 93 86 00 	sts	0x0086, r24
+    74e4:	b8 c0       	rjmp	.+368    	; 0x7656 <main+0x272>
+                }else if(rq->bRequest == USBRQ_GET_DESCRIPTOR){ /* 6 */
+    74e6:	26 30       	cpi	r18, 0x06	; 6
+    74e8:	b1 f5       	brne	.+108    	; 0x7556 <main+0x172>
+                    flags = USB_FLG_MSGPTR_IS_ROM | USB_FLG_USE_DEFAULT_RW;
+                    if(rq->wValue.bytes[1] == USBDESCR_DEVICE){ /* 1 */
+    74ea:	13 96       	adiw	r26, 0x03	; 3
+    74ec:	8c 91       	ld	r24, X
+    74ee:	13 97       	sbiw	r26, 0x03	; 3
+    74f0:	81 30       	cpi	r24, 0x01	; 1
+    74f2:	29 f4       	brne	.+10     	; 0x74fe <main+0x11a>
+                        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_DEVICE, usbDescriptorDevice)
+    74f4:	30 92 84 00 	sts	0x0084, r3
+    74f8:	20 92 83 00 	sts	0x0083, r2
+    74fc:	06 c0       	rjmp	.+12     	; 0x750a <main+0x126>
+                    }else if(rq->wValue.bytes[1] == USBDESCR_CONFIG){   /* 2 */
+    74fe:	82 30       	cpi	r24, 0x02	; 2
+    7500:	39 f4       	brne	.+14     	; 0x7510 <main+0x12c>
+                        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_CONFIGURATION, usbDescriptorConfiguration)
+    7502:	50 92 84 00 	sts	0x0084, r5
+    7506:	40 92 83 00 	sts	0x0083, r4
+    750a:	20 ec       	ldi	r18, 0xC0	; 192
+    750c:	92 e1       	ldi	r25, 0x12	; 18
+    750e:	a5 c0       	rjmp	.+330    	; 0x765a <main+0x276>
+                    }else if(rq->wValue.bytes[1] == USBDESCR_STRING){   /* 3 */
+    7510:	83 30       	cpi	r24, 0x03	; 3
+    7512:	09 f0       	breq	.+2      	; 0x7516 <main+0x132>
+    7514:	9e c0       	rjmp	.+316    	; 0x7652 <main+0x26e>
+#if USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_DYNAMIC
+                        if(USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_RAM)
+                            flags &= ~USB_FLG_MSGPTR_IS_ROM;
+                        replyLen = usbFunctionDescriptor(rq);
+#else   /* USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_DYNAMIC */
+                        if(rq->wValue.bytes[0] == 0){   /* descriptor index */
+    7516:	12 96       	adiw	r26, 0x02	; 2
+    7518:	8c 91       	ld	r24, X
+    751a:	12 97       	sbiw	r26, 0x02	; 2
+    751c:	88 23       	and	r24, r24
+    751e:	31 f4       	brne	.+12     	; 0x752c <main+0x148>
+                            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_0, usbDescriptorString0)
+    7520:	70 92 84 00 	sts	0x0084, r7
+    7524:	60 92 83 00 	sts	0x0083, r6
+    7528:	20 ec       	ldi	r18, 0xC0	; 192
+    752a:	68 c0       	rjmp	.+208    	; 0x75fc <main+0x218>
+                        }else if(rq->wValue.bytes[0] == 1){
+    752c:	81 30       	cpi	r24, 0x01	; 1
+    752e:	39 f4       	brne	.+14     	; 0x753e <main+0x15a>
+                            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_VENDOR, usbDescriptorStringVendor)
+    7530:	90 92 84 00 	sts	0x0084, r9
+    7534:	80 92 83 00 	sts	0x0083, r8
+    7538:	20 ec       	ldi	r18, 0xC0	; 192
+    753a:	9c e1       	ldi	r25, 0x1C	; 28
+    753c:	8e c0       	rjmp	.+284    	; 0x765a <main+0x276>
+                        }else if(rq->wValue.bytes[0] == 2){
+    753e:	82 30       	cpi	r24, 0x02	; 2
+    7540:	09 f0       	breq	.+2      	; 0x7544 <main+0x160>
+    7542:	87 c0       	rjmp	.+270    	; 0x7652 <main+0x26e>
+                            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_PRODUCT, usbDescriptorStringDevice)
+    7544:	84 e7       	ldi	r24, 0x74	; 116
+    7546:	90 e7       	ldi	r25, 0x70	; 112
+    7548:	90 93 84 00 	sts	0x0084, r25
+    754c:	80 93 83 00 	sts	0x0083, r24
+    7550:	20 ec       	ldi	r18, 0xC0	; 192
+    7552:	9e e0       	ldi	r25, 0x0E	; 14
+    7554:	82 c0       	rjmp	.+260    	; 0x765a <main+0x276>
+                        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_HID_REPORT, usbDescriptorHidReport)
+#endif  /* USB_CFG_DESCR_PROPS_HID_REPORT */
+                    }else if(USB_CFG_DESCR_PROPS_UNKNOWN & USB_PROP_IS_DYNAMIC){
+                        replyLen = usbFunctionDescriptor(rq);
+                    }
+                }else if(rq->bRequest == USBRQ_GET_CONFIGURATION){  /* 8 */
+    7556:	28 30       	cpi	r18, 0x08	; 8
+    7558:	39 f4       	brne	.+14     	; 0x7568 <main+0x184>
+                    replyData = &usbConfiguration;  /* send current configuration value */
+                    SET_REPLY_LEN(1);
+    755a:	88 e8       	ldi	r24, 0x88	; 136
+    755c:	90 e0       	ldi	r25, 0x00	; 0
+    755e:	90 93 84 00 	sts	0x0084, r25
+    7562:	80 93 83 00 	sts	0x0083, r24
+    7566:	4e c0       	rjmp	.+156    	; 0x7604 <main+0x220>
+                }else if(rq->bRequest == USBRQ_SET_CONFIGURATION){  /* 9 */
+    7568:	29 30       	cpi	r18, 0x09	; 9
+    756a:	31 f4       	brne	.+12     	; 0x7578 <main+0x194>
+                    usbConfiguration = rq->wValue.bytes[0];
+    756c:	12 96       	adiw	r26, 0x02	; 2
+    756e:	8c 91       	ld	r24, X
+    7570:	12 97       	sbiw	r26, 0x02	; 2
+    7572:	80 93 88 00 	sts	0x0088, r24
+    7576:	6f c0       	rjmp	.+222    	; 0x7656 <main+0x272>
+#if USB_CFG_IMPLEMENT_HALT
+                    usbTxLen1 = USBPID_NAK;
+#endif
+                }else if(rq->bRequest == USBRQ_GET_INTERFACE){      /* 10 */
+    7578:	2a 30       	cpi	r18, 0x0A	; 10
+    757a:	09 f0       	breq	.+2      	; 0x757e <main+0x19a>
+    757c:	6c c0       	rjmp	.+216    	; 0x7656 <main+0x272>
+                    SET_REPLY_LEN(1);
+    757e:	b0 92 84 00 	sts	0x0084, r11
+    7582:	a0 92 83 00 	sts	0x0083, r10
+    7586:	3e c0       	rjmp	.+124    	; 0x7604 <main+0x220>
+{
+usbRequest_t    *rq = (void *)data;
+uchar           len = 0;
+static uchar    replyBuffer[4];
+
+    usbMsgPtr = replyBuffer;
+    7588:	86 e6       	ldi	r24, 0x66	; 102
+    758a:	90 e0       	ldi	r25, 0x00	; 0
+    758c:	90 93 84 00 	sts	0x0084, r25
+    7590:	80 93 83 00 	sts	0x0083, r24
+    if(rq->bRequest == USBASP_FUNC_TRANSMIT)
+    7594:	23 30       	cpi	r18, 0x03	; 3
+    7596:	09 f0       	breq	.+2      	; 0x759a <main+0x1b6>
+    7598:	33 c0       	rjmp	.+102    	; 0x7600 <main+0x21c>
+    {   /* emulate parts of ISP protocol */
+        uchar rval = 0;
+        usbWord_t address;
+        address.bytes[1] = rq->wValue.bytes[1];
+    759a:	13 96       	adiw	r26, 0x03	; 3
+    759c:	3c 91       	ld	r19, X
+    759e:	13 97       	sbiw	r26, 0x03	; 3
+        address.bytes[0] = rq->wIndex.bytes[0];
+    75a0:	14 96       	adiw	r26, 0x04	; 4
+    75a2:	ec 91       	ld	r30, X
+    75a4:	14 97       	sbiw	r26, 0x04	; 4
+        if(rq->wValue.bytes[0] == 0x30)
+    75a6:	12 96       	adiw	r26, 0x02	; 2
+    75a8:	8c 91       	ld	r24, X
+    75aa:	12 97       	sbiw	r26, 0x02	; 2
+    75ac:	80 33       	cpi	r24, 0x30	; 48
+    75ae:	31 f4       	brne	.+12     	; 0x75bc <main+0x1d8>
+        {   /* read signature */
+            rval = rq->wIndex.bytes[0] & 3;
+            rval = signatureBytes[rval];
+    75b0:	e3 70       	andi	r30, 0x03	; 3
+    75b2:	f0 e0       	ldi	r31, 0x00	; 0
+    75b4:	ee 59       	subi	r30, 0x9E	; 158
+    75b6:	ff 4f       	sbci	r31, 0xFF	; 255
+    75b8:	e0 81       	ld	r30, Z
+    75ba:	1d c0       	rjmp	.+58     	; 0x75f6 <main+0x212>
+#if HAVE_EEPROM_BYTE_ACCESS
+        }
+        else if(rq->wValue.bytes[0] == 0xa0)
+    75bc:	80 3a       	cpi	r24, 0xA0	; 160
+    75be:	49 f4       	brne	.+18     	; 0x75d2 <main+0x1ee>
+        {   /* read EEPROM byte */
+            rval = eeprom_read_byte((void *)address.word);
+    75c0:	8e 2f       	mov	r24, r30
+    75c2:	93 2f       	mov	r25, r19
+/** \ingroup avr_eeprom
+    Read one byte from EEPROM address \a __p.
+ */
+__ATTR_PURE__ static __inline__ uint8_t eeprom_read_byte (const uint8_t *__p)
+{
+    do {} while (!eeprom_is_ready ());
+    75c4:	e1 99       	sbic	0x1c, 1	; 28
+    75c6:	fe cf       	rjmp	.-4      	; 0x75c4 <main+0x1e0>
+#if	E2END <= 0xFF
+    EEARL = (unsigned)__p;
+#else
+    EEAR = (unsigned)__p;
+    75c8:	9f bb       	out	0x1f, r25	; 31
+    75ca:	8e bb       	out	0x1e, r24	; 30
+#endif
+   ///////////////////////////////////////////////////////////////
+   // here fixed ERRATA Bug "Reading EEPROM by using ST or STS 
+   //  to set EERE bit triggers unexpected interrupt request"
+   // EECR |= (1 << EERE);
+   __asm__ __volatile__ (
+    75cc:	e0 9a       	sbi	0x1c, 0	; 28
+        "sbi	%[__eecr], %[__eere]	\n\t"
+        :
+        : [__eecr]  "i" (_SFR_IO_ADDR(EECR)),
+          [__eere]  "i" (EERE)
+    );
+   return EEDR;
+    75ce:	ed b3       	in	r30, 0x1d	; 29
+    75d0:	12 c0       	rjmp	.+36     	; 0x75f6 <main+0x212>
+        }
+        else if(rq->wValue.bytes[0] == 0xc0)
+    75d2:	80 3c       	cpi	r24, 0xC0	; 192
+    75d4:	79 f4       	brne	.+30     	; 0x75f4 <main+0x210>
+        {   /* write EEPROM byte */
+            eeprom_write_byte((void *)address.word, rq->wIndex.bytes[1]);
+    75d6:	15 96       	adiw	r26, 0x05	; 5
+    75d8:	2c 91       	ld	r18, X
+    75da:	15 97       	sbiw	r26, 0x05	; 5
+    75dc:	8e 2f       	mov	r24, r30
+    75de:	93 2f       	mov	r25, r19
+/** \ingroup avr_eeprom
+    Write a byte \a __value to EEPROM address \a __p.
+ */
+static __inline__ void eeprom_write_byte (uint8_t *__p, uint8_t __value)
+{
+    do {} while (!eeprom_is_ready ());
+    75e0:	e1 99       	sbic	0x1c, 1	; 28
+    75e2:	fe cf       	rjmp	.-4      	; 0x75e0 <main+0x1fc>
+#endif
+
+#if	E2END <= 0xFF
+    EEARL = (unsigned)__p;
+#else
+    EEAR = (unsigned)__p;
+    75e4:	9f bb       	out	0x1f, r25	; 31
+    75e6:	8e bb       	out	0x1e, r24	; 30
+#endif
+    EEDR = __value;
+    75e8:	2d bb       	out	0x1d, r18	; 29
+
+    __asm__ __volatile__ (
+    75ea:	0f b6       	in	r0, 0x3f	; 63
+    75ec:	f8 94       	cli
+    75ee:	e2 9a       	sbi	0x1c, 2	; 28
+    75f0:	e1 9a       	sbi	0x1c, 1	; 28
+    75f2:	0f be       	out	0x3f, r0	; 63
+    75f4:	e0 e0       	ldi	r30, 0x00	; 0
+#endif
+        }else
+        {
+            /* ignore all others, return default value == 0 */
+        }
+        replyBuffer[3] = rval;
+    75f6:	e0 93 69 00 	sts	0x0069, r30
+    75fa:	20 e8       	ldi	r18, 0x80	; 128
+    75fc:	94 e0       	ldi	r25, 0x04	; 4
+    75fe:	2d c0       	rjmp	.+90     	; 0x765a <main+0x276>
+        len = 4;
+    }
+    else if(rq->bRequest == USBASP_FUNC_ENABLEPROG)
+    7600:	25 30       	cpi	r18, 0x05	; 5
+    7602:	19 f4       	brne	.+6      	; 0x760a <main+0x226>
+    7604:	20 e8       	ldi	r18, 0x80	; 128
+    7606:	91 e0       	ldi	r25, 0x01	; 1
+    7608:	28 c0       	rjmp	.+80     	; 0x765a <main+0x276>
+    {
+        /* replyBuffer[0] = 0; is never touched and thus always 0 which means success */
+        len = 1;
+    }
+    else if(rq->bRequest >= USBASP_FUNC_READFLASH && rq->bRequest <= USBASP_FUNC_SETLONGADDRESS)
+    760a:	82 2f       	mov	r24, r18
+    760c:	84 50       	subi	r24, 0x04	; 4
+    760e:	86 30       	cpi	r24, 0x06	; 6
+    7610:	d0 f4       	brcc	.+52     	; 0x7646 <main+0x262>
+    {
+        currentAddress.w[0] = rq->wValue.word;
+    7612:	12 96       	adiw	r26, 0x02	; 2
+    7614:	8d 91       	ld	r24, X+
+    7616:	9c 91       	ld	r25, X
+    7618:	13 97       	sbiw	r26, 0x03	; 3
+    761a:	90 93 6d 00 	sts	0x006D, r25
+    761e:	80 93 6c 00 	sts	0x006C, r24
+        if(rq->bRequest == USBASP_FUNC_SETLONGADDRESS)
+    7622:	29 30       	cpi	r18, 0x09	; 9
+    7624:	c1 f0       	breq	.+48     	; 0x7656 <main+0x272>
+            currentAddress.w[1] = rq->wIndex.word;
+#endif
+        }
+        else
+        {
+            bytesRemaining = rq->wLength.bytes[0];
+    7626:	16 96       	adiw	r26, 0x06	; 6
+    7628:	9c 91       	ld	r25, X
+    762a:	16 97       	sbiw	r26, 0x06	; 6
+    762c:	90 93 70 00 	sts	0x0070, r25
+            /* if(rq->bRequest == USBASP_FUNC_WRITEFLASH) only evaluated during writeFlash anyway */
+            isLastPage = rq->wIndex.bytes[1] & 0x02;
+    7630:	15 96       	adiw	r26, 0x05	; 5
+    7632:	8c 91       	ld	r24, X
+    7634:	82 70       	andi	r24, 0x02	; 2
+    7636:	80 93 71 00 	sts	0x0071, r24
+#if HAVE_EEPROM_PAGED_ACCESS
+            currentRequest = rq->bRequest;
+    763a:	20 93 72 00 	sts	0x0072, r18
+            }else{  /* not a standard request -- must be vendor or class request */
+                replyLen = usbFunctionSetup(data);
+            }
+#if USB_CFG_IMPLEMENT_FN_READ || USB_CFG_IMPLEMENT_FN_WRITE
+            if(replyLen == 0xff){   /* use user-supplied read/write function */
+                if((rq->bmRequestType & USBRQ_DIR_MASK) == USBRQ_DIR_DEVICE_TO_HOST){
+    763e:	37 fd       	sbrc	r19, 7
+    7640:	12 c0       	rjmp	.+36     	; 0x7666 <main+0x282>
+    7642:	6f ef       	ldi	r22, 0xFF	; 255
+    7644:	11 c0       	rjmp	.+34     	; 0x7668 <main+0x284>
+#endif
+            len = 0xff; /* hand over to usbFunctionRead() / usbFunctionWrite() */
+        }
+#if BOOTLOADER_CAN_EXIT
+    }
+    else if(rq->bRequest == USBASP_FUNC_DISCONNECT)
+    7646:	22 30       	cpi	r18, 0x02	; 2
+    7648:	31 f4       	brne	.+12     	; 0x7656 <main+0x272>
+    {
+        requestBootLoaderExit = 1;      /* allow proper shutdown/close of connection */
+    764a:	91 e0       	ldi	r25, 0x01	; 1
+    764c:	90 93 6b 00 	sts	0x006B, r25
+    7650:	02 c0       	rjmp	.+4      	; 0x7656 <main+0x272>
+    7652:	20 ec       	ldi	r18, 0xC0	; 192
+    7654:	01 c0       	rjmp	.+2      	; 0x7658 <main+0x274>
+    7656:	20 e8       	ldi	r18, 0x80	; 128
+    7658:	90 e0       	ldi	r25, 0x00	; 0
+                    replyLen = rq->wLength.bytes[0];    /* IN transfers only */
+                }
+                flags &= ~USB_FLG_USE_DEFAULT_RW;  /* we have no valid msg, use user supplied read/write functions */
+            }else   /* The 'else' prevents that we limit a replyLen of 0xff to the maximum transfer len. */
+#endif
+            if(!rq->wLength.bytes[1] && replyLen > rq->wLength.bytes[0])  /* limit length to max */
+    765a:	17 96       	adiw	r26, 0x07	; 7
+    765c:	8c 91       	ld	r24, X
+    765e:	17 97       	sbiw	r26, 0x07	; 7
+    7660:	88 23       	and	r24, r24
+    7662:	21 f0       	breq	.+8      	; 0x766c <main+0x288>
+    7664:	84 c0       	rjmp	.+264    	; 0x776e <main+0x38a>
+                replyLen = usbFunctionSetup(data);
+            }
+#if USB_CFG_IMPLEMENT_FN_READ || USB_CFG_IMPLEMENT_FN_WRITE
+            if(replyLen == 0xff){   /* use user-supplied read/write function */
+                if((rq->bmRequestType & USBRQ_DIR_MASK) == USBRQ_DIR_DEVICE_TO_HOST){
+                    replyLen = rq->wLength.bytes[0];    /* IN transfers only */
+    7666:	69 2f       	mov	r22, r25
+    7668:	20 e0       	ldi	r18, 0x00	; 0
+    766a:	82 c0       	rjmp	.+260    	; 0x7770 <main+0x38c>
+                }
+                flags &= ~USB_FLG_USE_DEFAULT_RW;  /* we have no valid msg, use user supplied read/write functions */
+            }else   /* The 'else' prevents that we limit a replyLen of 0xff to the maximum transfer len. */
+#endif
+            if(!rq->wLength.bytes[1] && replyLen > rq->wLength.bytes[0])  /* limit length to max */
+    766c:	16 96       	adiw	r26, 0x06	; 6
+    766e:	6c 91       	ld	r22, X
+    7670:	69 17       	cp	r22, r25
+    7672:	08 f4       	brcc	.+2      	; 0x7676 <main+0x292>
+    7674:	7d c0       	rjmp	.+250    	; 0x7770 <main+0x38c>
+    7676:	7b c0       	rjmp	.+246    	; 0x776e <main+0x38a>
+                replyLen = rq->wLength.bytes[0];
+        }
+        /* make sure that data packets which are sent as ACK to an OUT transfer are always zero sized */
+    }else{  /* DATA packet from out request */
+#if USB_CFG_IMPLEMENT_FN_WRITE
+        if(!(usbMsgFlags & USB_FLG_USE_DEFAULT_RW)){
+    7678:	80 91 6a 00 	lds	r24, 0x006A
+    767c:	87 fd       	sbrc	r24, 7
+    767e:	74 c0       	rjmp	.+232    	; 0x7768 <main+0x384>
+
+uchar usbFunctionWrite(uchar *data, uchar len)
+{
+uchar   isLastWrite;
+
+    OFF_RED();
+    7680:	c0 98       	cbi	0x18, 0	; 24
+    DBG1(0x31, (void *)&currentAddress.l, 4);
+    if(len > bytesRemaining)
+    7682:	80 91 70 00 	lds	r24, 0x0070
+    7686:	80 17       	cp	r24, r16
+    7688:	08 f4       	brcc	.+2      	; 0x768c <main+0x2a8>
+    768a:	08 2f       	mov	r16, r24
+        len = bytesRemaining;
+    bytesRemaining -= len;
+    768c:	80 1b       	sub	r24, r16
+    768e:	80 93 70 00 	sts	0x0070, r24
+    isLastWrite = bytesRemaining == 0;
+    7692:	ff 24       	eor	r15, r15
+    7694:	88 23       	and	r24, r24
+    7696:	11 f4       	brne	.+4      	; 0x769c <main+0x2b8>
+    7698:	ff 24       	eor	r15, r15
+    769a:	f3 94       	inc	r15
+    if(currentRequest >= USBASP_FUNC_READEEPROM){
+    769c:	80 91 72 00 	lds	r24, 0x0072
+    76a0:	87 30       	cpi	r24, 0x07	; 7
+    76a2:	08 f4       	brcc	.+2      	; 0x76a6 <main+0x2c2>
+    76a4:	57 c0       	rjmp	.+174    	; 0x7754 <main+0x370>
+        eeprom_write_block(data, (void *)currentAddress.w[0], len);
+    76a6:	10 e0       	ldi	r17, 0x00	; 0
+    \note The argument order is mismatch with common functions like strcpy().
+ */
+static __inline__ void
+eeprom_write_block (const void *__src, void *__dst, size_t __n)
+{
+    __eewr_block (__dst, __src, __n, eeprom_write_byte);
+    76a8:	26 ee       	ldi	r18, 0xE6	; 230
+    76aa:	39 e3       	ldi	r19, 0x39	; 57
+    76ac:	a8 01       	movw	r20, r16
+    76ae:	bd 01       	movw	r22, r26
+    76b0:	80 91 6c 00 	lds	r24, 0x006C
+    76b4:	90 91 6d 00 	lds	r25, 0x006D
+    76b8:	0e 94 8b 3c 	call	0x7916	; 0x7916 <__eewr_block>
+        currentAddress.w[0] += len;
+    76bc:	80 91 6c 00 	lds	r24, 0x006C
+    76c0:	90 91 6d 00 	lds	r25, 0x006D
+    76c4:	08 0f       	add	r16, r24
+    76c6:	19 1f       	adc	r17, r25
+    76c8:	10 93 6d 00 	sts	0x006D, r17
+    76cc:	00 93 6c 00 	sts	0x006C, r16
+    76d0:	44 c0       	rjmp	.+136    	; 0x775a <main+0x376>
+    usbDeviceConnect();
+    sei();
+}
+
+int main(void)
+{
+    76d2:	02 50       	subi	r16, 0x02	; 2
+    }else{
+        char i = len;
+        while(i > 0)
+        {
+            i -= 2;
+            if((currentAddress.w[0] & (SPM_PAGESIZE - 1)) == 0){    /* if page start: erase */
+    76d4:	20 91 6c 00 	lds	r18, 0x006C
+    76d8:	30 91 6d 00 	lds	r19, 0x006D
+    76dc:	c9 01       	movw	r24, r18
+    76de:	8f 77       	andi	r24, 0x7F	; 127
+    76e0:	90 70       	andi	r25, 0x00	; 0
+    76e2:	89 2b       	or	r24, r25
+    76e4:	51 f4       	brne	.+20     	; 0x76fa <main+0x316>
+                DBG1(0x33, 0, 0);
+#ifndef NO_FLASH_WRITE
+                cli();
+    76e6:	f8 94       	cli
+                boot_page_erase(CURRENT_ADDRESS);   /* erase page */
+    76e8:	43 e0       	ldi	r20, 0x03	; 3
+    76ea:	f9 01       	movw	r30, r18
+    76ec:	40 93 57 00 	sts	0x0057, r20
+    76f0:	e8 95       	spm
+                sei();
+    76f2:	78 94       	sei
+                boot_spm_busy_wait();               /* wait until page is erased */
+    76f4:	07 b6       	in	r0, 0x37	; 55
+    76f6:	00 fc       	sbrc	r0, 0
+    76f8:	fd cf       	rjmp	.-6      	; 0x76f4 <main+0x310>
+#endif
+            }
+            DBG1(0x32, 0, 0);
+            cli();
+    76fa:	f8 94       	cli
+            boot_page_fill(CURRENT_ADDRESS, *(short *)data);
+    76fc:	8d 91       	ld	r24, X+
+    76fe:	9d 91       	ld	r25, X+
+    7700:	41 e0       	ldi	r20, 0x01	; 1
+    7702:	0c 01       	movw	r0, r24
+    7704:	f9 01       	movw	r30, r18
+    7706:	40 93 57 00 	sts	0x0057, r20
+    770a:	e8 95       	spm
+    770c:	11 24       	eor	r1, r1
+            sei();
+    770e:	78 94       	sei
+            CURRENT_ADDRESS += 2;
+    7710:	c9 01       	movw	r24, r18
+    7712:	02 96       	adiw	r24, 0x02	; 2
+    7714:	90 93 6d 00 	sts	0x006D, r25
+    7718:	80 93 6c 00 	sts	0x006C, r24
+            data += 2;
+            /* write page when we cross page boundary or we have the last partial page */
+            if((currentAddress.w[0] & (SPM_PAGESIZE - 1)) == 0 || (i <= 0 && isLastWrite && isLastPage)){
+    771c:	8f 77       	andi	r24, 0x7F	; 127
+    771e:	90 70       	andi	r25, 0x00	; 0
+    7720:	89 2b       	or	r24, r25
+    7722:	41 f0       	breq	.+16     	; 0x7734 <main+0x350>
+    7724:	10 16       	cp	r1, r16
+    7726:	b4 f0       	brlt	.+44     	; 0x7754 <main+0x370>
+    7728:	ff 20       	and	r15, r15
+    772a:	a1 f0       	breq	.+40     	; 0x7754 <main+0x370>
+    772c:	80 91 71 00 	lds	r24, 0x0071
+    7730:	88 23       	and	r24, r24
+    7732:	81 f0       	breq	.+32     	; 0x7754 <main+0x370>
+                DBG1(0x34, 0, 0);
+#ifndef NO_FLASH_WRITE
+                cli();
+    7734:	f8 94       	cli
+                boot_page_write(CURRENT_ADDRESS - 2);
+    7736:	85 e0       	ldi	r24, 0x05	; 5
+    7738:	f9 01       	movw	r30, r18
+    773a:	80 93 57 00 	sts	0x0057, r24
+    773e:	e8 95       	spm
+                sei();
+    7740:	78 94       	sei
+                boot_spm_busy_wait();
+    7742:	07 b6       	in	r0, 0x37	; 55
+    7744:	00 fc       	sbrc	r0, 0
+    7746:	fd cf       	rjmp	.-6      	; 0x7742 <main+0x35e>
+                cli();
+    7748:	f8 94       	cli
+                boot_rww_enable();
+    774a:	91 e1       	ldi	r25, 0x11	; 17
+    774c:	90 93 57 00 	sts	0x0057, r25
+    7750:	e8 95       	spm
+                sei();
+    7752:	78 94       	sei
+    if(currentRequest >= USBASP_FUNC_READEEPROM){
+        eeprom_write_block(data, (void *)currentAddress.w[0], len);
+        currentAddress.w[0] += len;
+    }else{
+        char i = len;
+        while(i > 0)
+    7754:	10 16       	cp	r1, r16
+    7756:	0c f4       	brge	.+2      	; 0x775a <main+0x376>
+    7758:	bc cf       	rjmp	.-136    	; 0x76d2 <main+0x2ee>
+            uchar rval = usbFunctionWrite(data, len);
+            replyLen = 0xff;
+            if(rval == 0xff){       /* an error occurred */
+                usbMsgLen = 0xff;   /* cancel potentially pending data packet for ACK */
+                usbTxLen = USBPID_STALL;
+            }else if(rval != 0){    /* This was the final package */
+    775a:	ff 20       	and	r15, r15
+    775c:	11 f0       	breq	.+4      	; 0x7762 <main+0x37e>
+    775e:	20 e0       	ldi	r18, 0x00	; 0
+    7760:	04 c0       	rjmp	.+8      	; 0x776a <main+0x386>
+    7762:	20 e0       	ldi	r18, 0x00	; 0
+    7764:	6f ef       	ldi	r22, 0xFF	; 255
+    7766:	04 c0       	rjmp	.+8      	; 0x7770 <main+0x38c>
+    7768:	20 e8       	ldi	r18, 0x80	; 128
+    776a:	60 e0       	ldi	r22, 0x00	; 0
+    776c:	01 c0       	rjmp	.+2      	; 0x7770 <main+0x38c>
+    776e:	69 2f       	mov	r22, r25
+            }
+            flags = 0;    /* start with a DATA1 package, stay with user supplied write() function */
+        }
+#endif
+    }
+    usbMsgFlags = flags;
+    7770:	20 93 6a 00 	sts	0x006A, r18
+    usbMsgLen = replyLen;
+    7774:	60 93 60 00 	sts	0x0060, r22
+        usbProcessRx(usbRxBuf + USB_BUFSIZE + 1 - usbInputBufOffset, len - 3);
+#if USB_CFG_HAVE_FLOWCONTROL
+        if(usbRxLen > 0)    /* only mark as available if not inactivated */
+            usbRxLen = 0;
+#else
+        usbRxLen = 0;       /* mark rx buffer as available */
+    7778:	10 92 85 00 	sts	0x0085, r1
+#endif
+    }
+    if(usbTxLen & 0x10)
+    777c:	80 91 61 00 	lds	r24, 0x0061
+    7780:	84 ff       	sbrs	r24, 4
+    7782:	83 c0       	rjmp	.+262    	; 0x788a <main+0x4a6>
+    { /* transmit system idle */
+        if(usbMsgLen != 0xff)
+    7784:	80 91 60 00 	lds	r24, 0x0060
+    7788:	8f 3f       	cpi	r24, 0xFF	; 255
+    778a:	09 f4       	brne	.+2      	; 0x778e <main+0x3aa>
+    778c:	7e c0       	rjmp	.+252    	; 0x788a <main+0x4a6>
+    778e:	08 2f       	mov	r16, r24
+    7790:	89 30       	cpi	r24, 0x09	; 9
+    7792:	08 f0       	brcs	.+2      	; 0x7796 <main+0x3b2>
+    7794:	08 e0       	ldi	r16, 0x08	; 8
+uchar   wantLen, len, txLen, token;
+
+    wantLen = usbMsgLen;
+    if(wantLen > 8)
+        wantLen = 8;
+    usbMsgLen -= wantLen;
+    7796:	80 1b       	sub	r24, r16
+    7798:	80 93 60 00 	sts	0x0060, r24
+    token = USBPID_DATA1;
+    if(usbMsgFlags & USB_FLG_TX_PACKET)
+    779c:	80 91 6a 00 	lds	r24, 0x006A
+    77a0:	80 fd       	sbrc	r24, 0
+    77a2:	02 c0       	rjmp	.+4      	; 0x77a8 <main+0x3c4>
+    77a4:	1b e4       	ldi	r17, 0x4B	; 75
+    77a6:	01 c0       	rjmp	.+2      	; 0x77aa <main+0x3c6>
+    77a8:	13 ec       	ldi	r17, 0xC3	; 195
+        token = USBPID_DATA0;
+    usbMsgFlags++;
+    77aa:	8f 5f       	subi	r24, 0xFF	; 255
+    77ac:	80 93 6a 00 	sts	0x006A, r24
+
+
+static uchar usbRead(uchar *data, uchar len)
+{
+#if USB_CFG_IMPLEMENT_FN_READ
+    if(usbMsgFlags & USB_FLG_USE_DEFAULT_RW){
+    77b0:	87 ff       	sbrs	r24, 7
+    77b2:	26 c0       	rjmp	.+76     	; 0x7800 <main+0x41c>
+#endif
+        uchar i = len, *r = usbMsgPtr;
+    77b4:	20 91 83 00 	lds	r18, 0x0083
+    77b8:	30 91 84 00 	lds	r19, 0x0084
+        if(usbMsgFlags & USB_FLG_MSGPTR_IS_ROM){    /* ROM data */
+    77bc:	86 fd       	sbrc	r24, 6
+    77be:	05 c0       	rjmp	.+10     	; 0x77ca <main+0x3e6>
+    77c0:	d9 01       	movw	r26, r18
+    77c2:	90 2f       	mov	r25, r16
+    77c4:	e6 e7       	ldi	r30, 0x76	; 118
+    77c6:	f0 e0       	ldi	r31, 0x00	; 0
+    77c8:	11 c0       	rjmp	.+34     	; 0x77ec <main+0x408>
+    77ca:	a6 e7       	ldi	r26, 0x76	; 118
+    77cc:	b0 e0       	ldi	r27, 0x00	; 0
+    77ce:	80 e0       	ldi	r24, 0x00	; 0
+    77d0:	90 e0       	ldi	r25, 0x00	; 0
+    77d2:	06 c0       	rjmp	.+12     	; 0x77e0 <main+0x3fc>
+            while(i--){
+                uchar c = PRG_RDB(r);    /* assign to char size variable to enforce byte ops */
+    77d4:	f9 01       	movw	r30, r18
+    77d6:	e8 0f       	add	r30, r24
+    77d8:	f9 1f       	adc	r31, r25
+    77da:	e4 91       	lpm	r30, Z+
+                *data++ = c;
+    77dc:	ed 93       	st	X+, r30
+    77de:	01 96       	adiw	r24, 0x01	; 1
+#if USB_CFG_IMPLEMENT_FN_READ
+    if(usbMsgFlags & USB_FLG_USE_DEFAULT_RW){
+#endif
+        uchar i = len, *r = usbMsgPtr;
+        if(usbMsgFlags & USB_FLG_MSGPTR_IS_ROM){    /* ROM data */
+            while(i--){
+    77e0:	08 17       	cp	r16, r24
+    77e2:	c1 f7       	brne	.-16     	; 0x77d4 <main+0x3f0>
+    77e4:	05 c0       	rjmp	.+10     	; 0x77f0 <main+0x40c>
+                *data++ = c;
+                r++;
+            }
+        }else{                  /* RAM data */
+            while(i--)
+                *data++ = *r++;
+    77e6:	8d 91       	ld	r24, X+
+    77e8:	81 93       	st	Z+, r24
+    77ea:	91 50       	subi	r25, 0x01	; 1
+                uchar c = PRG_RDB(r);    /* assign to char size variable to enforce byte ops */
+                *data++ = c;
+                r++;
+            }
+        }else{                  /* RAM data */
+            while(i--)
+    77ec:	99 23       	and	r25, r25
+    77ee:	d9 f7       	brne	.-10     	; 0x77e6 <main+0x402>
+    77f0:	f9 01       	movw	r30, r18
+    77f2:	e0 0f       	add	r30, r16
+    77f4:	f1 1d       	adc	r31, r1
+                *data++ = *r++;
+        }
+        usbMsgPtr = r;
+    77f6:	f0 93 84 00 	sts	0x0084, r31
+    77fa:	e0 93 83 00 	sts	0x0083, r30
+    77fe:	32 c0       	rjmp	.+100    	; 0x7864 <main+0x480>
+        return len;
+#if USB_CFG_IMPLEMENT_FN_READ
+    }else{
+        if(len != 0)    /* don't bother app with 0 sized reads */
+    7800:	00 23       	and	r16, r16
+    7802:	81 f1       	breq	.+96     	; 0x7864 <main+0x480>
+    return isLastWrite;
+}
+
+uchar usbFunctionRead(uchar *data, uchar len)
+{
+    OFF_RED();
+    7804:	c0 98       	cbi	0x18, 0	; 24
+    if(len > bytesRemaining)
+    7806:	80 91 70 00 	lds	r24, 0x0070
+    780a:	80 17       	cp	r24, r16
+    780c:	08 f4       	brcc	.+2      	; 0x7810 <main+0x42c>
+    780e:	08 2f       	mov	r16, r24
+        len = bytesRemaining;
+    bytesRemaining -= len;
+    7810:	80 1b       	sub	r24, r16
+    7812:	80 93 70 00 	sts	0x0070, r24
+    if(currentRequest >= USBASP_FUNC_READEEPROM){
+    7816:	80 91 72 00 	lds	r24, 0x0072
+    781a:	87 30       	cpi	r24, 0x07	; 7
+    781c:	68 f0       	brcs	.+26     	; 0x7838 <main+0x454>
+    \a __dst.
+ */
+static __inline__ void
+eeprom_read_block (void *__dst, const void *__src, size_t __n)
+{
+    __eerd_block (__dst, __src, __n, eeprom_read_byte);
+    781e:	60 91 6c 00 	lds	r22, 0x006C
+    7822:	70 91 6d 00 	lds	r23, 0x006D
+    7826:	2e ed       	ldi	r18, 0xDE	; 222
+    7828:	39 e3       	ldi	r19, 0x39	; 57
+    782a:	40 2f       	mov	r20, r16
+    782c:	50 e0       	ldi	r21, 0x00	; 0
+    782e:	86 e7       	ldi	r24, 0x76	; 118
+    7830:	90 e0       	ldi	r25, 0x00	; 0
+    7832:	0e 94 6f 3c 	call	0x78de	; 0x78de <__eerd_block>
+    7836:	0a c0       	rjmp	.+20     	; 0x784c <main+0x468>
+        eeprom_read_block(data, (void *)currentAddress.w[0], len);
+    }else{
+        memcpy_P(data, (PGM_VOID_P)CURRENT_ADDRESS, len);
+    7838:	60 91 6c 00 	lds	r22, 0x006C
+    783c:	70 91 6d 00 	lds	r23, 0x006D
+    7840:	40 2f       	mov	r20, r16
+    7842:	50 e0       	ldi	r21, 0x00	; 0
+    7844:	86 e7       	ldi	r24, 0x76	; 118
+    7846:	90 e0       	ldi	r25, 0x00	; 0
+    7848:	0e 94 66 3c 	call	0x78cc	; 0x78cc <memcpy_P>
+    }
+    CURRENT_ADDRESS += len;
+    784c:	80 91 6c 00 	lds	r24, 0x006C
+    7850:	90 91 6d 00 	lds	r25, 0x006D
+    7854:	80 0f       	add	r24, r16
+    7856:	91 1d       	adc	r25, r1
+    7858:	90 93 6d 00 	sts	0x006D, r25
+    785c:	80 93 6c 00 	sts	0x006C, r24
+    token = USBPID_DATA1;
+    if(usbMsgFlags & USB_FLG_TX_PACKET)
+        token = USBPID_DATA0;
+    usbMsgFlags++;
+    len = usbRead(usbTxBuf + 1, wantLen);
+    if(len <= 8){           /* valid data packet */
+    7860:	09 30       	cpi	r16, 0x09	; 9
+    7862:	60 f4       	brcc	.+24     	; 0x787c <main+0x498>
+        usbCrc16Append(&usbTxBuf[1], len);
+    7864:	60 2f       	mov	r22, r16
+    7866:	86 e7       	ldi	r24, 0x76	; 118
+    7868:	90 e0       	ldi	r25, 0x00	; 0
+    786a:	0e 94 8b 38 	call	0x7116	; 0x7116 <usbCrc16Append>
+        txLen = len + 4;    /* length including sync byte */
+    786e:	80 2f       	mov	r24, r16
+    7870:	8c 5f       	subi	r24, 0xFC	; 252
+        if(len < 8)         /* a partial package identifies end of message */
+    7872:	08 30       	cpi	r16, 0x08	; 8
+    7874:	31 f0       	breq	.+12     	; 0x7882 <main+0x49e>
+            usbMsgLen = 0xff;
+    7876:	e0 92 60 00 	sts	0x0060, r14
+    787a:	03 c0       	rjmp	.+6      	; 0x7882 <main+0x49e>
+    }else{
+        txLen = USBPID_STALL;   /* stall the endpoint */
+        usbMsgLen = 0xff;
+    787c:	e0 92 60 00 	sts	0x0060, r14
+    7880:	8e e1       	ldi	r24, 0x1E	; 30
+    }
+    usbTxBuf[0] = token;
+    7882:	10 93 75 00 	sts	0x0075, r17
+    usbTxLen = txLen;
+    7886:	80 93 61 00 	sts	0x0061, r24
+    788a:	9a e0       	ldi	r25, 0x0A	; 10
+/* We want to do
+ *     return (USBIN & USBMASK);
+ * here, but the compiler does int-expansion acrobatics.
+ * We can avoid this by assigning to a char-sized variable.
+ */
+    rval = USBIN & USBMASK;
+    788c:	80 b3       	in	r24, 0x10	; 16
+            usbBuildTxBlock();
+        }
+    }
+    for(i = 10; i > 0; i--)
+    {
+        if(isNotSE0())
+    788e:	84 71       	andi	r24, 0x14	; 20
+    7890:	31 f4       	brne	.+12     	; 0x789e <main+0x4ba>
+        if(usbMsgLen != 0xff)
+        {  /* transmit data pending? */
+            usbBuildTxBlock();
+        }
+    }
+    for(i = 10; i > 0; i--)
+    7892:	91 50       	subi	r25, 0x01	; 1
+    7894:	d9 f7       	brne	.-10     	; 0x788c <main+0x4a8>
+        if(isNotSE0())
+            break;
+    }
+    if(i == 0)
+    { /* RESET condition, called multiple times during reset */
+        usbNewDeviceAddr = 0;
+    7896:	10 92 86 00 	sts	0x0086, r1
+        usbDeviceAddr = 0;
+    789a:	10 92 80 00 	sts	0x0080, r1
+        initForUsbConnectivity();
+        do
+        {
+            usbPoll();
+#if BOOTLOADER_CAN_EXIT
+            if(requestBootLoaderExit)
+    789e:	80 91 6b 00 	lds	r24, 0x006B
+    78a2:	88 23       	and	r24, r24
+    78a4:	11 f0       	breq	.+4      	; 0x78aa <main+0x4c6>
+            {
+                if(--i == 0)
+    78a6:	21 97       	sbiw	r28, 0x01	; 1
+    78a8:	39 f0       	breq	.+14     	; 0x78b8 <main+0x4d4>
+                    break;
+            }
+            ledcnt++;
+    78aa:	08 94       	sec
+    78ac:	c1 1c       	adc	r12, r1
+    78ae:	d1 1c       	adc	r13, r1
+            if (ledcnt & 0x4000)
+    78b0:	d6 fc       	sbrc	r13, 6
+               ON_RED();
+    78b2:	c0 9a       	sbi	0x18, 0	; 24
+    78b4:	b5 9b       	sbis	0x16, 5	; 22
+    78b6:	df cd       	rjmp	.-1090   	; 0x7476 <main+0x92>
+/**
+ * Clean up after boot loader action. In this case: switch off all LEDs.
+ */
+static inline void bootLoaderExit(void) 
+{
+    OFF_RED();
+    78b8:	c0 98       	cbi	0x18, 0	; 24
+
+static void leaveBootloader()
+{
+    DBG1(0x01, 0, 0);
+    bootLoaderExit();
+    cli();
+    78ba:	f8 94       	cli
+    GICR = (1 << IVCE);  /* enable change of interrupt vectors */
+    78bc:	81 e0       	ldi	r24, 0x01	; 1
+    78be:	8b bf       	out	0x3b, r24	; 59
+    GICR = (0 << IVSEL); /* move interrupts to application flash section */
+    78c0:	1b be       	out	0x3b, r1	; 59
+/* We must go through a global function pointer variable instead of writing
+ *  ((void (*)(void))0)();
+ * because the compiler optimizes a constant 0 to "rcall 0" which is not
+ * handled correctly by the assembler.
+ */
+    nullVector();
+    78c2:	e0 91 73 00 	lds	r30, 0x0073
+    78c6:	f0 91 74 00 	lds	r31, 0x0074
+    78ca:	09 95       	icall
+
+000078cc <memcpy_P>:
+    78cc:	fb 01       	movw	r30, r22
+    78ce:	dc 01       	movw	r26, r24
+    78d0:	02 c0       	rjmp	.+4      	; 0x78d6 <memcpy_P+0xa>
+    78d2:	05 90       	lpm	r0, Z+
+    78d4:	0d 92       	st	X+, r0
+    78d6:	41 50       	subi	r20, 0x01	; 1
+    78d8:	50 40       	sbci	r21, 0x00	; 0
+    78da:	d8 f7       	brcc	.-10     	; 0x78d2 <memcpy_P+0x6>
+    78dc:	08 95       	ret
+
+000078de <__eerd_block>:
+    78de:	a0 e0       	ldi	r26, 0x00	; 0
+    78e0:	b0 e0       	ldi	r27, 0x00	; 0
+    78e2:	e5 e7       	ldi	r30, 0x75	; 117
+    78e4:	fc e3       	ldi	r31, 0x3C	; 60
+    78e6:	0c 94 b1 3c 	jmp	0x7962	; 0x7962 <__prologue_saves__+0x14>
+    78ea:	7c 01       	movw	r14, r24
+    78ec:	eb 01       	movw	r28, r22
+    78ee:	8a 01       	movw	r16, r20
+    78f0:	69 01       	movw	r12, r18
+    78f2:	09 c0       	rjmp	.+18     	; 0x7906 <__eerd_block+0x28>
+    78f4:	ce 01       	movw	r24, r28
+    78f6:	21 96       	adiw	r28, 0x01	; 1
+    78f8:	f6 01       	movw	r30, r12
+    78fa:	09 95       	icall
+    78fc:	f7 01       	movw	r30, r14
+    78fe:	81 93       	st	Z+, r24
+    7900:	7f 01       	movw	r14, r30
+    7902:	01 50       	subi	r16, 0x01	; 1
+    7904:	10 40       	sbci	r17, 0x00	; 0
+    7906:	01 15       	cp	r16, r1
+    7908:	11 05       	cpc	r17, r1
+    790a:	a1 f7       	brne	.-24     	; 0x78f4 <__eerd_block+0x16>
+    790c:	cd b7       	in	r28, 0x3d	; 61
+    790e:	de b7       	in	r29, 0x3e	; 62
+    7910:	e8 e0       	ldi	r30, 0x08	; 8
+    7912:	0c 94 cd 3c 	jmp	0x799a	; 0x799a <__epilogue_restores__+0x14>
+
+00007916 <__eewr_block>:
+    7916:	a0 e0       	ldi	r26, 0x00	; 0
+    7918:	b0 e0       	ldi	r27, 0x00	; 0
+    791a:	e1 e9       	ldi	r30, 0x91	; 145
+    791c:	fc e3       	ldi	r31, 0x3C	; 60
+    791e:	0c 94 b1 3c 	jmp	0x7962	; 0x7962 <__prologue_saves__+0x14>
+    7922:	ec 01       	movw	r28, r24
+    7924:	7b 01       	movw	r14, r22
+    7926:	8a 01       	movw	r16, r20
+    7928:	69 01       	movw	r12, r18
+    792a:	09 c0       	rjmp	.+18     	; 0x793e <__eewr_block+0x28>
+    792c:	f7 01       	movw	r30, r14
+    792e:	61 91       	ld	r22, Z+
+    7930:	7f 01       	movw	r14, r30
+    7932:	ce 01       	movw	r24, r28
+    7934:	21 96       	adiw	r28, 0x01	; 1
+    7936:	f6 01       	movw	r30, r12
+    7938:	09 95       	icall
+    793a:	01 50       	subi	r16, 0x01	; 1
+    793c:	10 40       	sbci	r17, 0x00	; 0
+    793e:	01 15       	cp	r16, r1
+    7940:	11 05       	cpc	r17, r1
+    7942:	a1 f7       	brne	.-24     	; 0x792c <__eewr_block+0x16>
+    7944:	cd b7       	in	r28, 0x3d	; 61
+    7946:	de b7       	in	r29, 0x3e	; 62
+    7948:	e8 e0       	ldi	r30, 0x08	; 8
+    794a:	0c 94 cd 3c 	jmp	0x799a	; 0x799a <__epilogue_restores__+0x14>
+
+0000794e <__prologue_saves__>:
+    794e:	2f 92       	push	r2
+    7950:	3f 92       	push	r3
+    7952:	4f 92       	push	r4
+    7954:	5f 92       	push	r5
+    7956:	6f 92       	push	r6
+    7958:	7f 92       	push	r7
+    795a:	8f 92       	push	r8
+    795c:	9f 92       	push	r9
+    795e:	af 92       	push	r10
+    7960:	bf 92       	push	r11
+    7962:	cf 92       	push	r12
+    7964:	df 92       	push	r13
+    7966:	ef 92       	push	r14
+    7968:	ff 92       	push	r15
+    796a:	0f 93       	push	r16
+    796c:	1f 93       	push	r17
+    796e:	cf 93       	push	r28
+    7970:	df 93       	push	r29
+    7972:	cd b7       	in	r28, 0x3d	; 61
+    7974:	de b7       	in	r29, 0x3e	; 62
+    7976:	ca 1b       	sub	r28, r26
+    7978:	db 0b       	sbc	r29, r27
+    797a:	0f b6       	in	r0, 0x3f	; 63
+    797c:	f8 94       	cli
+    797e:	de bf       	out	0x3e, r29	; 62
+    7980:	0f be       	out	0x3f, r0	; 63
+    7982:	cd bf       	out	0x3d, r28	; 61
+    7984:	09 94       	ijmp
+
+00007986 <__epilogue_restores__>:
+    7986:	2a 88       	ldd	r2, Y+18	; 0x12
+    7988:	39 88       	ldd	r3, Y+17	; 0x11
+    798a:	48 88       	ldd	r4, Y+16	; 0x10
+    798c:	5f 84       	ldd	r5, Y+15	; 0x0f
+    798e:	6e 84       	ldd	r6, Y+14	; 0x0e
+    7990:	7d 84       	ldd	r7, Y+13	; 0x0d
+    7992:	8c 84       	ldd	r8, Y+12	; 0x0c
+    7994:	9b 84       	ldd	r9, Y+11	; 0x0b
+    7996:	aa 84       	ldd	r10, Y+10	; 0x0a
+    7998:	b9 84       	ldd	r11, Y+9	; 0x09
+    799a:	c8 84       	ldd	r12, Y+8	; 0x08
+    799c:	df 80       	ldd	r13, Y+7	; 0x07
+    799e:	ee 80       	ldd	r14, Y+6	; 0x06
+    79a0:	fd 80       	ldd	r15, Y+5	; 0x05
+    79a2:	0c 81       	ldd	r16, Y+4	; 0x04
+    79a4:	1b 81       	ldd	r17, Y+3	; 0x03
+    79a6:	aa 81       	ldd	r26, Y+2	; 0x02
+    79a8:	b9 81       	ldd	r27, Y+1	; 0x01
+    79aa:	ce 0f       	add	r28, r30
+    79ac:	d1 1d       	adc	r29, r1
+    79ae:	0f b6       	in	r0, 0x3f	; 63
+    79b0:	f8 94       	cli
+    79b2:	de bf       	out	0x3e, r29	; 62
+    79b4:	0f be       	out	0x3f, r0	; 63
+    79b6:	cd bf       	out	0x3d, r28	; 61
+    79b8:	ed 01       	movw	r28, r26
+    79ba:	08 95       	ret
+
+000079bc <_exit>:
+    79bc:	f8 94       	cli
+
+000079be <__stop_program>:
+    79be:	ff cf       	rjmp	.-2      	; 0x79be <__stop_program>
