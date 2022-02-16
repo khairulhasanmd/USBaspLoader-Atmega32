@@ -6,7 +6,6 @@
  * Tabsize: 4
  * Copyright: (c) 2008 by Jeroen Benschop and OBJECTIVE DEVELOPMENT Software GmbH
  * License: GNU GPL v2 (see License.txt), GNU GPL v3 or proprietary (CommercialLicense.txt)
- * Revision: $Id: usbdrvasm20.inc 740 2009-04-13 18:23:31Z cs $
  */
 
 /* Do not link this file! Link usbdrvasm.S instead, which includes the
@@ -154,7 +153,7 @@ bit7:
     sec                         ;[4]
     ror     shift               ;[5] shift "1" into the data
     st      y+, shift           ;[6] store the data into the buffer
-    ldi     shift, 0x40         ;[7] reset data for receiving the next byte
+    ldi     shift, 0x40         ;[8] reset data for receiving the next byte
     subi    leap, 0x55          ;[9] trick to introduce a leap cycle every 3 bytes
     brcc    nextInst            ;[10 or 11] it will fail after 85 bytes. However low speed can only receive 11
     dec     bitcnt              ;[11 or 12]

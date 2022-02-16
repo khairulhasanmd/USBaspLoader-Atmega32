@@ -5,7 +5,6 @@
  * Tabsize: 4
  * Copyright: (c) 2007 by OBJECTIVE DEVELOPMENT Software GmbH
  * License: GNU GPL v2 (see License.txt), GNU GPL v3 or proprietary (CommercialLicense.txt)
- * Revision: $Id: usbdrvasm15.inc 740 2009-04-13 18:23:31Z cs $
  */
 
 /* Do not link this file! Link usbdrvasm.S instead, which includes the
@@ -411,7 +410,7 @@ skipAddrAssign:				;- [03/04]
     cbr     x2, USBMASK     		;1 [09] set both pins to input
     mov     x3, x1          		;1 [10]
     cbr     x3, USBMASK     		;1 [11] configure no pullup on both pins
-    ldi     x4, 3           		;1 [12]
+    ldi     x4, 2           		;1 [12]
 se0Delay:				;- [12] [15] 
     dec     x4              		;1 [13] [16] 
     brne    se0Delay        		;1 [14] [17] 
