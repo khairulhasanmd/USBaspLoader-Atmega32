@@ -15,10 +15,10 @@
 #     make lock    # to protect the boot loader from overwriting
 
 F_CPU = 16000000
-DEVICE = atmega32
+DEVICE = atmega16
 # BOOTLOADER_ADDRESS is 1800 for 8k devices, 3800 for 16k and 7800 for 32k.
-BOOTLOADER_ADDRESS = 7000
-FUSEOPT = $(FUSEOPT_32)
+BOOTLOADER_ADDRESS = 3800
+FUSEOPT = $(FUSEOPT_16)
 LOCKOPT = -U lock:w:0xef:m
 
 PROGRAMMER = -c usbasp -P com2
@@ -28,6 +28,7 @@ FUSEOPT_8 = -U hfuse:w:0xc0:m -U lfuse:w:0x9f:m
 FUSEOPT_88 = -U hfuse:w:0xd6:m -U lfuse:w:0xdf:m -U efuse:w:0x00:m
 FUSEOPT_168 = -U hfuse:w:0xd6:m -U lfuse:w:0xdf:m -U efuse:w:0x00:m
 FUSEOPT_328 = -U lfuse:w:0xf7:m -U hfuse:w:0xda:m -U efuse:w:0x03:m
+FUSEOPT_16 = -U hfuse:w:0xc0:m -U lfuse:w:0x1f:m
 FUSEOPT_32 = -U hfuse:w:0xd8:m -U lfuse:w:0xcf:m
 # You may have to change the order of these -U commands.
 
@@ -129,16 +130,16 @@ all: main.hex
 	$(CC) $(CFLAGS) -S $< -o $@
 
 flash:	all
-	$(AVRDUDE) -U flash:w:main.hex:i
+	$(AVRDUDE) -U flash:w:main.hex:i -B 20
 
 readflash:
-	$(AVRDUDE) -U flash:r:read.hex:i
+	$(AVRDUDE) -U flash:r:read.hex:i -B 20
 
 fuse:
-	$(AVRDUDE) $(FUSEOPT)
+	$(AVRDUDE) $(FUSEOPT) -B 20
 
 lock:
-	$(AVRDUDE) $(LOCKOPT)
+	$(AVRDUDE) $(LOCKOPT)-B 20
 
 read_fuses:
 	$(UISP) --rd_fuses
